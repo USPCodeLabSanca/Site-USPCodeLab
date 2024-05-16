@@ -1,7 +1,9 @@
 function App() {
 
   return (
-    <div className="">
+    <div>
+      <div className="w-screen h-screen">
+      </div>
     </div>
   )
 }
