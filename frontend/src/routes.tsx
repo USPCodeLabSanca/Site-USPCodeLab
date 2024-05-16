@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import {Homepage, Projects, Events} from "src/pages";
 
 
-function Routes(){
+export default function PageRoutes(){
     return(
         <>
         <Routes>
