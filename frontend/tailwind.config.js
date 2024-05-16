@@ -6,7 +6,20 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary': '#53B39C',
+        'background': "292524",
+        'grayBackground': "464646",
+        'lightGrayBackground': '#D9D9D9',
+        'textGrey': '#939191',
+        'textLightGrey': '#C8C8C8',
+      },
+      fontFamily: {
+        'monteserrat': ['Montserrat', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+      }
+    },
   },
   variants: {
     extend: {},
