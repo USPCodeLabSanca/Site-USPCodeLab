@@ -1,24 +1,14 @@
-import { Routes, Route } from "react-router-dom";
-import {Homepage, Projects, Events} from "src/pages";
+import Routes from "./routes"
 
 
 function App() {
 
   return (
-    <>
-      <Routes>
-        <Route path="/" 
-        element={ <Homepage/>} // inserir paginas aqui
-        />
-
-        <Route path="/projects"
-        element={<Projects/>}
-        />
-
-        <Route path="/events"
-        element={<Events/>}/>
-      </Routes>
-    </>
+    <div>
+      <div className="w-screen h-screen">
+          <Routes />
+      </div>
+    </div>
   )
 }
 
