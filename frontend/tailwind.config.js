@@ -1,14 +1,16 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+  purge: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
         'primary': '#53B39C',
+        'primaryDark': '#3D8574',
+        'primaryDarker': '#30685B',
+        'primaryLight': '#6FF2D3',
         'background': "#292524",
         'grayBackground': "#464646",
         'lightGrayBackground': '#D9D9D9',
@@ -22,7 +24,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['active'],
+    },
   },
   plugins: [],
 }
