@@ -8,7 +8,7 @@ function Homepage() {
         <Button content='Ver Mais'></Button>
       </div>
 
-      <Footer></Footer>
+      <Footer/>
     </>
   )
 }

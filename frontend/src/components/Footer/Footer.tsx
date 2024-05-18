@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
             <div className='w-full flex flex-col items-center py-10 text-textLightGrey font-poppins '>
                 <div className='font-bold text-2xl sm:text-3xl'>Embarque conosco!</div>
                 <div className='text-sm sm:text-lg'>Fique conectado com o Codelab!</div>
+                {/* icones */}
                 <div className='flex flex-row py-2 justify-between gap-4'>
                     <Icon style='w-10 sm:w-14' Image={YoutubeIcon} alt='Icone Youtube'></Icon>
                     <Icon style='w-10 sm:w-14' Image={InstagramIcon} alt='Icone Instagram'></Icon>
