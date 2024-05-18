@@ -18,6 +18,7 @@ module.exports = {
         'lightGrayBackground': '#D9D9D9',
         'textGrey': '#939191',
         'textLightGrey': '#C8C8C8',
+        'textLightBlueContrast' : '#5ED8FF'
       },
       fontFamily: {
         'monteserrat': ['Montserrat', 'sans-serif'],
