@@ -2,6 +2,7 @@ import React from 'react'
 
 type SVGType = React.FunctionComponent<React.SVGAttributes<SVGElement>>;
 
+// Props do icone - Passar imagem e alt text como parametero. Style eh opcional.
 interface IconProps {
     // SVG?: SVGType,
     // PNG? : React.FunctionComponent,
@@ -10,6 +11,7 @@ interface IconProps {
     style? : string
 }
 
+// Componente para inserir icone
 const Icon : React.FC<IconProps> = ( props : IconProps)  => {
 
     // const Image : SVGType | React.FunctionComponent | undefined =  props.SVG ? props.SVG : props.PNG;
