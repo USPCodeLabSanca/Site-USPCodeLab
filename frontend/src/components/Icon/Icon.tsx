@@ -1,6 +1,8 @@
 import React from 'react'
+import { SVGType } from 'src/types'
 
-type SVGType = React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+
+// type SVGType = React.FunctionComponent<React.SVGAttributes<SVGElement>>;
 
 // Props do icone - Passar imagem e alt text como parametero. Style eh opcional.
 interface IconProps {
