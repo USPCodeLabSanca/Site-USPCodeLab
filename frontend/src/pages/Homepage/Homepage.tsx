@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button, Footer } from 'src/components'
 
 function Homepage() {
