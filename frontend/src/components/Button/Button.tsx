@@ -7,7 +7,7 @@ interface ButtonProps {
 function Button({ content }: ButtonProps) {
   return (
     <>
-      <button className='bg-primary text-white font-poppins font-medium w-full h-full text-center rounded-xl hover:bg-primaryDark active:bg-primaryDarker'>
+      <button className='bg-primary text-white font-poppins font-medium text-sm w-full h-full text-center rounded-xl hover:bg-primaryDark active:bg-primaryDarker'>
         {content}
       </button>
     </>
