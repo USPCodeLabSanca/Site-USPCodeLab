@@ -1,11 +1,9 @@
-import { Button, Footer, ImageScroll } from 'src/components'
-import { InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon } from 'src/assets';
 import { devBoost } from 'src/assets'
-import { Footer, HomeSection } from 'src/components'
-import TextHighlight from 'src/components/TextHighlight/TextHightlight'
+import { InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon } from 'src/assets';
+import { Footer, HomeSection, ImageScroll, TextHighlight } from 'src/components'
 
 function Homepage() {
-  const imageArray = [ InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon]
+  const imageArray = [InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon]
   return (
     <>
       <HomeSection />
@@ -18,9 +16,9 @@ function Homepage() {
         alt='devBoost logo'
       ></TextHighlight>
 
-        <ImageScroll images={imageArray}></ImageScroll>
+      <ImageScroll images={imageArray}></ImageScroll>
 
-      <Footer/>
+      <Footer />
     </>
   )
 }
