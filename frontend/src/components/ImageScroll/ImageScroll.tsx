@@ -77,7 +77,7 @@ const ImageScroll : React.FC<ImageScrollProps> = (props : ImageScrollProps) => {
       <>
       <div className='max-h-96 max-w-96 h-96 w-full overflow-hidden'>
 
-         (
+         
             <div 
                 className={` ${(i ===1) ? "invisible" : "visible"} flex transition-transform ease-out duration-500`}
                 style={{ transform: `translateY(${-1*itensTranlate[0] * 100}%)` }} >
@@ -95,7 +95,7 @@ const ImageScroll : React.FC<ImageScrollProps> = (props : ImageScrollProps) => {
                 style={{ transform: `translateY(-${(itensTranlate[2]) * 100}%)` }} >
                     <Scrollable image={imageArray[nextIndex]} n={nextIndex}></Scrollable>
             </div>
-        )
+        
     
 
       </div>
