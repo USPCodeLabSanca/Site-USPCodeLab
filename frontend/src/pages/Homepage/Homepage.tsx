@@ -1,18 +1,24 @@
-import { Button, Footer, ImageScroll } from 'src/components'
+import { devBoost } from 'src/assets'
 import { InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon } from 'src/assets';
+import { Footer, HomeSection, ImageScroll, TextHighlight } from 'src/components'
 
 function Homepage() {
-  const imageArray = [ InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon]
+  const imageArray = [InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon]
   return (
     <>
-      <div>Homepage</div>
-      <div className='w-64 h-12'>
-        <Button content='Ver Mais'></Button>
-      </div>
+      <HomeSection />
 
-        <ImageScroll images={imageArray}></ImageScroll>
+      {/* exemplo de uso do título */}
+      <TextHighlight
+        title='Dev.Boost'
+        fontStyle='text6xl md:text-7xl font-monteserrat font-semibold'
+        img={devBoost}
+        alt='devBoost logo'
+      ></TextHighlight>
 
-      <Footer/>
+      <ImageScroll images={imageArray}></ImageScroll>
+
+      <Footer />
     </>
   )
 }
