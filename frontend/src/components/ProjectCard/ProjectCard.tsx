@@ -1,4 +1,3 @@
-import React from "react";
 import Icon from "../Icon/Icon";
 
 /*
@@ -7,31 +6,35 @@ import Icon from "../Icon/Icon";
 */
 import { GithubDarkIcon } from 'src/assets';
 
-type SVGType = React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+import { ProjectCardProps } from "src/types";
 
-interface ProjectCardProps {
-    title: string;
-    text: string;
-    icons?: React.ElementType[],
-}
 
-function ProjectCard({title, text, icons}: ProjectCardProps){
+function ProjectCard(cardProps: ProjectCardProps){
+    /*
+    atributos disponivoes em cardprops:
+        title : string,
+        content : string,
+        icons?: React.FC[] | SVGType[],
+        iconLinks?: string[]
+    */
+
     return (
         <div className="bg-grayBackground rounded-xl  flex  flex-col md:flex-row px-6 py-5 gap-4 md:justify-between">
 
             <div className="flex flex-col gap-1 md:justify-between md:gap-3 w-5/4">
                 
                 <div className="flex flex-col md:flex-row gap-2 md:items-center">
-                    <h2 className="font-monteserrat font-semibold text-white text-4xl px-2 md:px-0 mr-4">{title}</h2>
+                    <h2 className="font-monteserrat font-semibold text-white text-4xl px-2 md:px-0 mr-4">{cardProps.title}</h2>
                     <div className="flex gap-4">
                         {/* icones */}
-                        {icons?.map((icon) => {
-                            return <Icon style="w-8 select-none" Image={icon as SVGType} alt="tech icon"/>
+                        {cardProps.icons?.map((icon) => {
+                            // TODO : adicionar links para os respectivos icones
+                            return <Icon style="w-8 select-none" Image={icon} alt="tech icon"/>
                         })}
                     </div>
                 </div>
 
-                <p className="font-poppins text-white text-sm w-full px-2 md:px-0 md:w-4/5 text-justify">{text}</p>
+                <p className="font-poppins text-white text-sm w-full px-2 md:px-0 md:w-4/5 text-justify">{cardProps.content}</p>
             </div>
 
             <div>
