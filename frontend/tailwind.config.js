@@ -27,9 +27,7 @@ module.exports = {
     },
   },
   variants: {
-    extend: {
-      backgroundColor: ['active'],
-    },
+    extend: {},
   },
   plugins: [],
 }
