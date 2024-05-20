@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+// hook para usar setInterval sem se preocupar com estados capturados iniciais
 function useInterval(callback: () => void, delay: number | null) {
   const savedCallback = useRef<() => void>();
 

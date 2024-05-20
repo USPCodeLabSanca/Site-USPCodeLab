@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Scrollable from './Scrollable/Scrollable';
-import userInterval, { useInterval } from 'src/utils';
+import  { useInterval } from 'src/utils';
 
 import { SVGType } from 'src/types';
 
@@ -71,16 +71,6 @@ const ImageScroll : React.FC<ImageScrollProps> = (props : ImageScrollProps) => {
 
     }
 
-    // useEffect(()=> {
-    //     const interval = setInterval(() => {
-    //         const new_i = moveDown();
-    //         setI(new_i)
-    //     }, 3000);
-
-    //     return () => clearInterval(interval);
-    // }, []);
-
-    // const rendering = [images[images.length-1], images[0], images[1]];
     useInterval(moveDown, 2000);
   
     return (

@@ -20,8 +20,3 @@ function Scrollable({ image} : ScrollableProps) {
 
 export default Scrollable
 
-
-/*
-
-
- */
