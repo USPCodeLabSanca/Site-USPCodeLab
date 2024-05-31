@@ -1,11 +1,13 @@
 import { devBoost } from 'src/assets'
 import { InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon } from 'src/assets';
-import { Footer, HomeSection, ImageScroll, TextHighlight } from 'src/components'
+import { Header, Footer, HomeSection, ImageScroll, TextHighlight } from 'src/components'
 
 function Homepage() {
   const imageArray = [InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon]
   return (
     <>
+      <Header />
+
       <HomeSection />
 
       {/* exemplo de uso do título */}
