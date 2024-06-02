@@ -8,3 +8,6 @@ export { default as GithubIcon } from './icons/github.svg';
 export { default as YoutubePNG } from './icons/youtube.png';
 export { default as logoSimplifiedWhiteColoured } from './logos/logo_simplified_white_coloured.png';
 export { default as devBoost } from './logos/logo_devboost.png'
+export { default as CodelabLogo } from './logos/logo_codelab.png'
+export { default as UspLogo } from './logos/logo_usp.png'
+export { default as IcmcLogo } from './logos/logo_icmc.png'
