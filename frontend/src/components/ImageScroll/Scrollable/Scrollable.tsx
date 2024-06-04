@@ -3,7 +3,7 @@ import { SVGType } from 'src/types'
 
 interface ScrollableProps {
   n? : number,
-  image : React.FC | SVGType
+  image: React.FC | SVGType | string;
 }
 
 function Scrollable({ image} : ScrollableProps) {
@@ -12,7 +12,7 @@ function Scrollable({ image} : ScrollableProps) {
 
           {/* <div className={"bg-primary h-96 mb-10 w-full flex justify-center items-center"} >this image {n}</div> */}
 
-          <img src={image?.toString()} className={" h-96 mb-10 w-full flex justify-center items-center"} ></img>
+          <img src={image?.toString()} className={" h-32 mb-12 w-full flex justify-center items-center"} ></img>
 
     </>
   )

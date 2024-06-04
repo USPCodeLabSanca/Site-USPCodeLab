@@ -7,7 +7,7 @@ import { SVGType } from 'src/types';
 // type ScrollableType = typeof Scrollable;
 
 interface ImageScrollProps {
-    images : React.FC[] | SVGType[]
+    images: React.FC[] | SVGType[] | string[];
 }
 
 // const images = [0, 1, 2, 3, 4, 5]
@@ -41,7 +41,7 @@ const ImageScroll : React.FC<ImageScrollProps> = (props : ImageScrollProps) => {
         updateImageIndex();
         let new_i = 0;
 
-        console.log(i)
+        // console.log(i)
         switch (i) {
             case 0: // temp index invisivel - 1
                 setItensTranslate([-1, 2, 2])
@@ -71,11 +71,11 @@ const ImageScroll : React.FC<ImageScrollProps> = (props : ImageScrollProps) => {
 
     }
 
-    useInterval(moveDown, 2000);
+    useInterval(moveDown, 3000);
   
     return (
       <>
-      <div className='max-h-96 max-w-96 h-96 w-full overflow-hidden'>
+      <div className='h-full w-full overflow-hidden'>
 
          
             <div 
