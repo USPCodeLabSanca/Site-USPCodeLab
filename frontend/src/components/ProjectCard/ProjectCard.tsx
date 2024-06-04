@@ -27,9 +27,9 @@ function ProjectCard(cardProps: ProjectCardProps){
                     <h2 className="font-monteserrat font-semibold text-white text-4xl px-2 md:px-0 mr-4">{cardProps.title}</h2>
                     <div className="flex gap-4">
                         {/* icones */}
-                        {cardProps.icons?.map((icon) => {
+                        {cardProps.icons?.map((icon, index) => {
                             // TODO : adicionar links para os respectivos icones
-                            return <Icon style="w-8 select-none" Image={icon} alt="tech icon"/>
+                            return <Icon key={index} style="w-8 select-none" Image={icon} alt="tech icon"/>
                         })}
                     </div>
                 </div>
