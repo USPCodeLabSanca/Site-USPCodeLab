@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div>
-      <div className="w-screen h-screen bg-background overflow-x-hidden overflow-y-auto">
+      <div className="w-full h-full">
         <Routes />
       </div>
     </div>
