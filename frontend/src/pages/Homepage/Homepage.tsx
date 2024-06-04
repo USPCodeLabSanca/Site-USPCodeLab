@@ -1,26 +1,24 @@
-import { devBoost } from 'src/assets'
-import { InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon } from 'src/assets';
-import { Header, Footer, HomeSection, ImageScroll, TextHighlight } from 'src/components'
+import { Header, Footer, HomeSection, WhoAreWeSectionV2 } from 'src/components'
 
 function Homepage() {
-  const imageArray = [InstagramIcon, GithubIcon, GithubDarkIcon, TelegramIcon, YoutubeIcon]
   return (
     <>
-      <Header />
+      <div className='bg-background'>
+        <Header />
 
-      <HomeSection />
+        <HomeSection />
+        {/* <WhoAreWeSection /> */}
+        <WhoAreWeSectionV2 />
+        {/* exemplo de uso do título */}
+        {/* <TextHighlight
+          title='Dev.Boost'
+          fontStyle='text6xl md:text-7xl font-monteserrat font-semibold'
+          img={devBoost}
+          alt='devBoost logo'
+        ></TextHighlight> */}
 
-      {/* exemplo de uso do título */}
-      <TextHighlight
-        title='Dev.Boost'
-        fontStyle='text6xl md:text-7xl font-monteserrat font-semibold'
-        img={devBoost}
-        alt='devBoost logo'
-      ></TextHighlight>
-
-      <ImageScroll images={imageArray}></ImageScroll>
-
-      <Footer />
+        <Footer />
+      </div>
     </>
   )
 }

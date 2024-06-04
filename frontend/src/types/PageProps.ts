@@ -4,7 +4,7 @@ import { SVGType } from "./Types";
 uso:
 >>> const MyComponent 
 */
-export interface UniversalChldrenPageProps extends React.HTMLProps<HTMLDivElement> { // template para definir props (com children)
+export interface UniversalChildrenPageProps extends React.HTMLProps<HTMLDivElement> { // template para definir props (com children)
     // definir as props aqui
 }
 
