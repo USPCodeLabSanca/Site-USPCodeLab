@@ -20,3 +20,10 @@ export interface ProjectCardProps {
     icons?: React.FC[] | SVGType[],
     iconLinks?: string[]
 }
+
+// propriedade para definir as caracteristicas de uma frente
+export interface FrenteProps {
+    nome: string;
+    code: string;
+    link: string;
+}
