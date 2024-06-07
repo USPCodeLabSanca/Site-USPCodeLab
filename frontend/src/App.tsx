@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div>
-      <div className="w-full h-full">
+      <div className="w-full h-full ">
         <Routes />
       </div>
     </div>
