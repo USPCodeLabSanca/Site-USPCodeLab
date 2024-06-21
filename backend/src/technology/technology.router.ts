@@ -5,6 +5,7 @@ const router = express.Router()
 
 router.route('/').get(controller.getTechnologies)
 router.route('/').post(controller.createTechnology)
+router.route('/:id').patch(controller.updateTechnology)
 router.route('/:id').delete(controller.deleteTechnology)
 
 export default router
