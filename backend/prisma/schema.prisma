@@ -15,7 +15,37 @@ datasource db {
 }
 
 model technology {
-  id_technology Int    @id @default(autoincrement())
-  name          String @unique
-  logo          String
+  id_technology     Int      @id @default(autoincrement())
+  name              String   @unique
+  logo              String
+  projects          project? @relation("project_technologies", fields: [projectId_project], references: [id_project])
+  projectId_project Int?
+}
+
+model event {
+  id_event    Int      @id @default(autoincrement())
+  name        String
+  description String
+  photo       String
+  date        DateTime
+}
+
+model group {
+  id_group    Int       @id @default(autoincrement())
+  name        String
+  description String
+  logo        String
+  project     project[]
+}
+
+model project {
+  id_project   Int          @id @default(autoincrement())
+  name         String
+  description  String
+  github_link  String
+  date         DateTime
+  id_group     Int
+  photo        String?
+  group        group        @relation(fields: [id_group], references: [id_group])
+  technologies technology[] @relation("project_technologies")
 }
