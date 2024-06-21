@@ -17,7 +17,7 @@ const updateTechnology = async (req: Request, res: Response) => {
 
     return res.send(newTechnology)
   } catch (error) {
-    res.status(500).send({ error: 'Erro ao deletar tecnologia.' })
+    res.status(500).send({ error: 'Erro ao atualizar tecnologia.' })
   }
 }
 
