@@ -15,11 +15,10 @@ datasource db {
 }
 
 model technology {
-  id_technology     Int      @id @default(autoincrement())
-  name              String   @unique
-  logo              String
-  projects          project? @relation("project_technologies", fields: [projectId_project], references: [id_project])
-  projectId_project Int?
+  id_technology Int       @id @default(autoincrement())
+  name          String    @unique
+  logo          String
+  projects      project[] @relation("project_technologies")
 }
 
 model event {
