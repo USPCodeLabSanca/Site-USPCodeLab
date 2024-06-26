@@ -27,3 +27,17 @@ export interface FrenteProps {
     code: string;
     link: string;
 }
+
+interface DateProps {
+    year: string
+    day: string
+}
+
+// props para o componente de evento
+export interface EventCardProps {
+    date: DateProps,
+    title: string,
+    content: string,
+    images?: string[],
+    offset: number,
+}
