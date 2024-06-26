@@ -1,4 +1,4 @@
-import { Header, Footer, HomeSection, WhoAreWeSectionV2 } from 'src/components'
+import { Header, Footer, HomeSection, WhoAreWeSection } from 'src/components'
 
 function Homepage() {
   return (
@@ -7,8 +7,8 @@ function Homepage() {
         <Header />
 
         <HomeSection />
-        {/* <WhoAreWeSection /> */}
-        <WhoAreWeSectionV2 />
+        <WhoAreWeSection />
+        {/* <WhoAreWeSectionV3 /> */}
         {/* exemplo de uso do título */}
         {/* <TextHighlight
           title='Dev.Boost'
