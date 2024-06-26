@@ -1,3 +1,5 @@
+// versão com hover
+
 import React, { useRef, useState } from 'react';
 
 import { useScroll, useTransform, motion, useAnimationControls } from 'framer-motion';
@@ -142,7 +144,7 @@ const WhoAreWeSection: React.FC = () => {
     if (!isTapped5) {
       setCoordinates5({ x: img5x.get(), y: img5y.get() });
       setIsTapped5(true);
-      setTimeout(() => { setIsTapped5(false) }, 4000);
+      setTimeout(() => { setIsTapped5(false) }, 10000);
     }
   }
 
