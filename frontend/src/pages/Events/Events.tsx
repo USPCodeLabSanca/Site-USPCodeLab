@@ -7,8 +7,8 @@ function Events() {
       year: "2023",
       day: "14 de Abril"
     },
-    title: "",
-    content: "",
+    title: "HackFools",
+    content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
     image: [hackfoolsImage0],
   }
   return (
