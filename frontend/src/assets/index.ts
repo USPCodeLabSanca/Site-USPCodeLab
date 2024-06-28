@@ -19,3 +19,8 @@ export { default as hackfoolsImage1 } from './images/hackfools1.jpg';
 export { default as hackfoolsImage2 } from './images/hackfools2.jpg';
 export { default as hackfoolsImage3 } from './images/hackfools3.jpg';
 export { default as hackfoolsImage4 } from './images/hackfools4.jpg';
+
+// Shapes:
+export { default as shape1 } from './svgshapes/shape1.svg';
+export { default as shape2 } from './svgshapes/shape2.svg';
+export { default as shape3 } from './svgshapes/shape3.svg';

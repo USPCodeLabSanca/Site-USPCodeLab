@@ -1,14 +1,15 @@
-import { Header, Footer, HomeSection, WhoAreWeSectionV2 } from 'src/components'
+import { Header, Footer, HomeSection, WhoAreWeSection } from 'src/components'
+import FrenteShape from 'src/components/FrenteShape/FrenteShape'
 
 function Homepage() {
   return (
     <>
-      <div className='bg-background'>
+      <div className='bg-background overflow-x-hidden'>
         <Header />
 
         <HomeSection />
-        {/* <WhoAreWeSection /> */}
-        <WhoAreWeSectionV2 />
+        <WhoAreWeSection />
+        {/* <WhoAreWeSectionV3 /> */}
         {/* exemplo de uso do título */}
         {/* <TextHighlight
           title='Dev.Boost'
@@ -16,7 +17,9 @@ function Homepage() {
           img={devBoost}
           alt='devBoost logo'
         ></TextHighlight> */}
-
+        <div className='relative flex flex-col'>
+          <FrenteShape type={3} orientation='left' />
+        </div>
         <Footer />
       </div>
     </>
