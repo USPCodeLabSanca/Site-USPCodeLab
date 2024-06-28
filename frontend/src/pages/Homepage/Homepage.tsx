@@ -1,4 +1,4 @@
-import { Header, Footer, HomeSection, WhoAreWeSectionV2 } from 'src/components'
+import { Header, Footer, HomeSection, WhoAreWeSectionV2, FrenteSection } from 'src/components'
 
 function Homepage() {
   return (
@@ -10,12 +10,8 @@ function Homepage() {
         {/* <WhoAreWeSection /> */}
         <WhoAreWeSectionV2 />
         {/* exemplo de uso do título */}
-        {/* <TextHighlight
-          title='Dev.Boost'
-          fontStyle='text6xl md:text-7xl font-monteserrat font-semibold'
-          img={devBoost}
-          alt='devBoost logo'
-        ></TextHighlight> */}
+
+        <FrenteSection />
 
         <Footer />
       </div>
