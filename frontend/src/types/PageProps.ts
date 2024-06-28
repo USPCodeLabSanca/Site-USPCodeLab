@@ -13,12 +13,18 @@ export interface UniversalPageProps { // template para definir props **sem child
     // definir as props aqui
 }
 
+// tipagem que aceita className para estilizaçao customizada de componentes. (Opicional)
+export interface BaseClassNameProps {
+    className?: string;
+}
+
 // propr que define um card de projeto para a pagina de projetos
 export interface ProjectCardProps {
     title : string,
     content : string,
     icons?: React.FC[] | SVGType[],
-    iconLinks?: string[]
+    iconLinks?: string[],
+    codelabArea? : string
 }
 
 // propriedade para definir as caracteristicas de uma frente
@@ -26,6 +32,7 @@ export interface FrenteProps {
     nome: string;
     code: string;
     link: string;
+    description?: string
 }
 
 interface DateProps {
@@ -41,4 +48,17 @@ export interface EventCardProps {
     images?: string[],
     offset: number,
     h: number,
+}
+
+// Interface que define o formato de um objeto que representa uma frente e a direcao dela para o componente pai
+export interface SelectedFrenteProps{
+    frente: string,
+    title: string
+    from: string
+}
+
+// Interface que define as propriedades do componente ProjectNavbar
+export interface ProjectNavbarProps{
+    frentes: FrenteProps[];
+    setSelectedFrente: (frente: SelectedFrenteProps) => void
 }

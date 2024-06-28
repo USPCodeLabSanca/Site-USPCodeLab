@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 
+
 interface TextHighlightProps {
+  className? : string,
   img?: string,
   alt?: string,
   title: string,
   fontStyle: string,
 }
 
-const TextHighlight: React.FC<TextHighlightProps> = ({ img, alt, title, fontStyle }: TextHighlightProps) => {
+const TextHighlight: React.FC<TextHighlightProps> = ({ className, img, alt, title, fontStyle }: TextHighlightProps) => {
   const titleRef = useRef<HTMLDivElement>(null);
   const [titleWidth, setTitleWidth] = useState(0);
 
@@ -30,7 +32,7 @@ const TextHighlight: React.FC<TextHighlightProps> = ({ img, alt, title, fontStyl
 
 
   return (
-    <div className='flex flex-row gap-4 items-center'>
+    <div className={`flex flex-row gap-4 items-center ${className}`}>
       {img ?
         <>
           <div className='w-20 h-20 rounded-full bg-white'>
