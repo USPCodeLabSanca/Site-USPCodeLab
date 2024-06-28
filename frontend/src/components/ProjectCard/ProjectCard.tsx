@@ -24,12 +24,12 @@ function ProjectCard(cardProps: ProjectCardProps){
             <div className="flex flex-col gap-1 md:justify-between md:gap-3 w-5/4">
                 
                 <div className="flex flex-col md:flex-row gap-2 md:items-center">
-                    <h2 className="font-monteserrat font-semibold text-white text-4xl px-2 md:px-0 mr-4">{cardProps.title}</h2>
+                    <h2 className="font-monteserrat font-semibold text-white text-lg md:text-xl px-2 md:px-0 mr-4">{cardProps.title}</h2>
                     <div className="flex gap-4">
                         {/* icones */}
                         {cardProps.icons?.map((icon, index) => {
                             // TODO : adicionar links para os respectivos icones
-                            return <Icon key={index} style="w-8 select-none" Image={icon} alt="tech icon"/>
+                            return <Icon key={index} style="w-[32px] select-none" Image={icon} alt="tech icon" link={cardProps.iconLinks ? cardProps.iconLinks[index] : undefined}/>
                         })}
                     </div>
                 </div>

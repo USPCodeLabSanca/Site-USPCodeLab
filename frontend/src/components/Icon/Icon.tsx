@@ -10,7 +10,8 @@ interface IconProps {
     // PNG? : React.FunctionComponent,
     Image: SVGType | React.FunctionComponent,
     alt : string,
-    style? : string
+    style? : string,
+    link?: string // proval link associado
 }
 
 // Componente para inserir icone
@@ -21,7 +22,14 @@ const Icon : React.FC<IconProps> = ( props : IconProps)  => {
   return (
     <>
         {/* componente icone com estilizaçao padrao w-14 caso a prop style nao seja passada */}
-        <img className={props.style ? props.style : 'w-14'}  src={Image.toString()} alt={props.alt} />
+        {props?.link ? 
+          <a href={props.link} target="_blank" rel="noopener noreferrer">
+            <img className={props.style ? props.style : 'w-14'}  src={Image.toString()} alt={props.alt} />
+          </a>
+          : 
+          <img className={props.style ? props.style : 'w-14'}  src={Image.toString()} alt={props.alt} />
+          }
+        
 
     </>
   )
