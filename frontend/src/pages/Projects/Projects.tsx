@@ -1,31 +1,31 @@
 import { ProjectCard, ProjectNavbar } from 'src/components'
 import { FrenteProps } from 'src/types'
 
-import { GithubDarkIcon, InstagramIcon } from 'src/assets'
+import { GithubDarkIcon, InstagramIcon, TelegramIcon, YoutubeIcon } from 'src/assets'
 import { ProjectCardProps } from 'src/types'
 import { useEffect, useState } from 'react'
 
 // exemplo de dados que serao retirados do banco de dados e transformados em ProjectCardProps
 const projectsList : ProjectCardProps[] = [
   {
-    title : "Projeto 1",
+    title : "Projeto 1 Titulo maior para testar responsividade",
     content : "Exemplo de projeto do devlearn",
-    icons : [GithubDarkIcon, InstagramIcon],
-    iconLinks : ["github.com", "instagram.com"],
+    icons : [GithubDarkIcon, InstagramIcon, YoutubeIcon],
+    iconLinks : ["github.com", "https://instagram.com", "https://www.youtube.com/watch?v=g3Vm2Z-MUkU"],
     codelabArea : "devlearn"
   },
   {
     title : "Projeto 2",
     content : "Exemplo de projeto do devboost",
-    icons : [GithubDarkIcon, InstagramIcon],
+    icons : [GithubDarkIcon],
     iconLinks : ["github.com", "instagram.com"],
     codelabArea : "devboost"
   },
   {
-    title : "Projeto 3",
+    title : "Projeto 3 jose carlos andrade do nascimento",
     content : "Exemplo de projeto do devscrap",
-    icons : [GithubDarkIcon, InstagramIcon],
-    iconLinks : ["github.com", "instagram.com"],
+    icons : [GithubDarkIcon, InstagramIcon, TelegramIcon],
+    iconLinks : ["github.com", "instagram.com", "segredo"],
     codelabArea : "devscrap"
   },
   {
@@ -76,8 +76,13 @@ function Projects() {
       {/* <ProjectCard {...FirstProject}/>  */}
       
       {projectsToShow.map(project => {
-        return <ProjectCard {...project}></ProjectCard>
-      })}
+        return (
+        <div className='pb-6 px-2 md:px-10'>
+          <ProjectCard {...project}></ProjectCard>
+        </div>
+      )
+      })
+      }
     </div>
   )
 }
