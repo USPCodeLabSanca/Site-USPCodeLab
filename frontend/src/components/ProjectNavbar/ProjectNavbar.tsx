@@ -14,7 +14,7 @@ interface ProjectNavbarProps{
     setSelectedFrente: (frente: SelectedFrenteProps) => void
 }
 
-export default function projecNavbar({frentes, setSelectedFrente}: ProjectNavbarProps){
+export default function ProjectNavbar({frentes, setSelectedFrente}: ProjectNavbarProps){
     // Lista de frentes que serao exibidas no navbar
 
     // Estado que armazena a frente selecionada

@@ -18,7 +18,8 @@ export interface ProjectCardProps {
     title : string,
     content : string,
     icons?: React.FC[] | SVGType[],
-    iconLinks?: string[]
+    iconLinks?: string[],
+    codelabArea? : string
 }
 
 // propriedade para definir as caracteristicas de uma frente
