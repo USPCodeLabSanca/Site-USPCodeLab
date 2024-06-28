@@ -28,7 +28,7 @@ const Header: React.FC = () => {
   return (
     <>
       <motion.div
-        className='fixed w-full p-5 md:pr-10 z-50'
+        className='fixed w-full p-5 md:pr-10 z-50 bg-background -mt-1'
         initial={{
           opacity: 1,
           y: 0
@@ -43,8 +43,8 @@ const Header: React.FC = () => {
           <Link to='/'>
             <motion.div className='flex'>
               <Icon style="w-40 mx-1" Image={CodelabLogo} alt="Icone UspCodeLabSanca" />
-              <Icon style="h-5 hidden md:block w-12 mx-1 mt-5" Image={UspLogo} alt="Icone USP" />
-              <Icon style="h-5 hidden md:block w-12 mx-1 mt-5" Image={IcmcLogo} alt="Icone ICMC" />
+              <Icon style="h-5 hidden md:block w-12 px-1 pt-5" Image={UspLogo} alt="Icone USP" />
+              <Icon style="h-5 hidden md:block w-12 px-1 pt-5" Image={IcmcLogo} alt="Icone ICMC" />
             </motion.div>
           </Link>
           <div className='flex w-40 md:w-52 justify-between'>
