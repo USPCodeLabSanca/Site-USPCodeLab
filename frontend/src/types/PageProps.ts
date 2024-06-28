@@ -19,7 +19,7 @@ export interface BaseClassNameProps {
 }
 
 // propr que define um card de projeto para a pagina de projetos
-export interface ProjectCardProps {
+export interface ProjectCardProps extends BaseClassNameProps {
     title : string,
     content : string,
     icons?: React.FC[] | SVGType[],

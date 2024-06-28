@@ -14,7 +14,7 @@ import {
   hackfoolsImage4
 } from 'src/assets';
 
-let obj = {
+const obj = {
   imgDelta: [0, 0.2, 0.4, 0.6, 0.8],
   imgXLeft: [10, 10, 10, 10, 10],
   imgXRight: [-10, -10, -10, -10, -10],
