@@ -47,6 +47,7 @@ export interface EventCardProps {
     content: string,
     images?: string[],
     offset: number,
+    h: number,
 }
 
 // Interface que define o formato de um objeto que representa uma frente e a direcao dela para o componente pai
