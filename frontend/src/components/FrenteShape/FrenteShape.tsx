@@ -1,9 +1,7 @@
-
-
 import {  shape1, shape2, shape3 } from "src/assets"
 
 interface FrenteShapeProps {
-  type: number;
+  type: 1 | 2 | 3; // o numero varia de 1 a 3 (3 opcoes de shape)
   image?: string; // a ideia é no futuro colocar imagem de fundo
   orientation: 'left' | 'right';
 }
@@ -28,10 +26,7 @@ function FrenteShape({ type, orientation }: FrenteShapeProps) {
 
   return (
     <div className="relative w-full">
-
-      <div className="relative w-full">
         <img src={Shape.toString()} alt="Shape" className={`${orientation === 'left' ? '-translate-x-[12rem] sm:-translate-x-[20rem] md:-translate-x-[25rem] lg:-translate-x-[35rem]' : 'translate-x-[12rem] sm:translate-x-[20rem] md:translate-x-[25rem] lg:translate-x-[35rem] xl:translate-x-[35rem]'} h-100 transform`} /> 
-      </div>
     </div>
   );
 }
