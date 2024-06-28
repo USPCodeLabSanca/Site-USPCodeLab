@@ -28,7 +28,7 @@ const Header: React.FC = () => {
   return (
     <>
       <motion.div
-        className='fixed w-full p-5 md:pr-10 z-10'
+        className='fixed w-full p-5 md:pr-10 z-50'
         initial={{
           opacity: 1,
           y: 0
