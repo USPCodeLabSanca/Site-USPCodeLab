@@ -1,9 +1,10 @@
 import { Header, Footer, HomeSection, WhoAreWeSection } from 'src/components'
+import FrenteShape from 'src/components/FrenteShape/FrenteShape'
 
 function Homepage() {
   return (
     <>
-      <div className='bg-background'>
+      <div className='bg-background overflow-x-hidden'>
         <Header />
 
         <HomeSection />
@@ -16,7 +17,9 @@ function Homepage() {
           img={devBoost}
           alt='devBoost logo'
         ></TextHighlight> */}
-
+        <div className='relative flex flex-col'>
+          <FrenteShape type={1} orientation='left' />
+        </div>
         <Footer />
       </div>
     </>
