@@ -19,11 +19,11 @@ function ProjectCard(cardProps: ProjectCardProps){
     */
 
     return (
-        <div className="bg-grayBackground rounded-xl  flex  flex-col md:flex-row px-6 py-5 gap-4 md:justify-between">
+        <div className="bg-grayBackground rounded-xl  flex  flex-col lg:flex-row px-6 py-5 gap-4 lg:justify-between">
 
             <div className="flex flex-col gap-1 md:justify-between md:gap-3 w-5/4">
                 
-                <div className="flex flex-col md:flex-row gap-2 md:items-center">
+                <div className="flex flex-col lg:flex-row gap-2 lg:items-center">
                     <h2 className="font-monteserrat font-semibold text-white text-lg md:text-xl px-2 md:px-0 mr-4">{cardProps.title}</h2>
                     <div className="flex gap-4">
                         {/* icones */}

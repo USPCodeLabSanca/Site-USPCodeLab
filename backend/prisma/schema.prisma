@@ -41,7 +41,7 @@ model project {
   id_project   Int          @id @default(autoincrement())
   name         String
   description  String
-  github_link  String
+  github_link  String?
   date         DateTime
   id_group     Int
   photo        String?
