@@ -8,3 +8,5 @@ export { default as TextHighlight } from './TextHighlight/TextHightlight'
 export { default as ImageScroll } from './ImageScroll/ImageScroll';
 export { default as WhoAreWeSection } from './sections/WhoAreWeSection/WhoAreWeSection'
 export { default as WhoAreWeSectionV2 } from './sections/WhoAreWeSection/WhoAreWeSectionV2'
+export { default as FrenteCard } from './FrenteCard/FrenteCard.tsx'
+export { default as FrenteSection } from './sections/FrenteSection/FrenteSection.tsx'
