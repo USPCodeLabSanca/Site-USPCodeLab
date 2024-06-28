@@ -40,4 +40,5 @@ export interface EventCardProps {
     content: string,
     images?: string[],
     offset: number,
+    h: number,
 }
