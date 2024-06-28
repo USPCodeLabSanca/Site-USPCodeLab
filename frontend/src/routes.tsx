@@ -16,6 +16,9 @@ export default function PageRoutes(){
 
             <Route path="/events"
             element={<Events/>}/>
+
+            <Route path="/helloworld" 
+            element={"Hello World"} ></Route>
         </Routes>
         </>
     )

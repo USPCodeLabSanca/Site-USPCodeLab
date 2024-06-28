@@ -5,6 +5,8 @@ import { GithubDarkIcon, InstagramIcon, TelegramIcon, YoutubeIcon } from 'src/as
 import { ProjectCardProps } from 'src/types'
 import { useEffect, useState } from 'react'
 
+import { motion } from 'framer-motion'
+
 // exemplo de dados que serao retirados do banco de dados e transformados em ProjectCardProps
 const projectsList : ProjectCardProps[] = [
   {
@@ -81,28 +83,52 @@ function Projects() {
   //from: direcao em relacao a anterior ( para a animacao )
   const [selectedFrente, setSelectedFrente] = useState({frente:"todos", title: "Todos", from:"none", })
   const [projectsToShow, setProjectsToShow] = useState<ProjectCardProps[]>(projectsList); // inicia mostrando todos os projetos
-  const [description, setDescription] = useState(frentes[0].description);
+  // const [description, setDescription] = useState(frentes[0].description);
+  // const allProjects
+
+  useEffect(() => {
+    
+  })
 
   useEffect(()=>{
     // Update da frente selecionada
     // mudar os elementos da tela
+
+    // frentes.map(frente => {
+
+    // })
     
     const newProjectsToShow = projectsList.filter((project) => {
       return selectedFrente.frente === "todos" || selectedFrente.frente === project.codelabArea;
     })
 
+    let projectsContainer: ProjectCardProps[][]
+
+    frentes.map((frente, index) => projectsContainer[index] = projectsList.filter((project) => {
+      return frente.code === project.codelabArea;
+    })); 
+    
+    // console.log(projectsContainer);
     // TODO OBS!!! o jeito que foi feito pelo gabriel nao me da acesso as props das frente aqui em Projects.tsx, somente em Navbar
     // por isso estou redefinindo aqui. Pensar mais pra frente em um modo mais eficiente de fazer isso
-    const frenteAtual = frentes.filter( frente => { return frente.code == selectedFrente.frente});
+    // const frenteAtual = frentes.filter( frente => { return frente.code == selectedFrente.frente});
 
     setProjectsToShow(newProjectsToShow);
-    setDescription(frenteAtual[0].description);
+    // setDescription(frenteAtual[0].description);
+
+    if (selectedFrente.from === "left") {
+      setX('-110%');
+    } else if (selectedFrente.from === "right") {
+      setX('0%');
+    }
 
   },[selectedFrente])
 
+  const [x, setX] = useState('0');
+  
+
   return (
     <>
-
       <Header />
 
       <div className='bg-gradient-to-tr from-white to-primary
@@ -111,25 +137,36 @@ function Projects() {
           PROJETOS
       </div>
 
+      <motion.div className='box w-8 h-8 bg-white' animate={{x}} transition={{type: "spring", delay : 0.1}}  />
+      <button className='bg-white' onClick={()=> {setX('0')}}>+</button>
+
       <div className='flex flex-col justify-center items-center mb-20'>
         <ProjectNavbar frentes={frentes} setSelectedFrente={setSelectedFrente}/> 
 
-        {/* <TextHighlight className='py-8 font-medium' img={devBoost} alt='Logo' title={selectedFrente.title} fontStyle='text-8xl'></TextHighlight> */}
-
-        {/* <div className=' md:w-1/2'> */}
-              <div className='font-poppins text-textLightGrey text-justify text-sm md:text-base w-2/3 m-10'>
-                {description}
-              </div>
+        
+          <div className='font-poppins text-textLightGrey text-justify text-sm md:text-base w-2/3 m-10'>
+            {/* {description} */}
+          </div>
               
-        {/* </div> */}
 
-        <div className='w-[80%]'>
+        <div className='w-[80%] '>
           {
-            projectsToShow.map(project => {
+            
+            projectsToShow.map((project, index) => {
+              let op = 1;
+              let dis = 'block'
+              if (index == 0)  {op = 1; dis = 'block'}
               return (
-                <div className='pb-6 px-2 md:px-10'>
-                  <ProjectCard {...project}></ProjectCard>
-                </div>
+                
+                <motion.div animate={
+                  {opacity: op,
+                    display : dis
+                  }
+                } transition={ { ease : 'easeInOut', duration : 0.8, delay : index * 0.1}}>
+                  <div className='pb-6 px-2 md:px-10'>
+                    <ProjectCard {...project}></ProjectCard>
+                  </div>
+                 </motion.div>
             )
             })
           }
