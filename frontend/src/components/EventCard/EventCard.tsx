@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Date from './Date/Date'
 import { useScroll, useTransform, motion } from 'framer-motion';
+import { EventDescription } from 'src/components';
 
 /*
     Interface com 
@@ -46,7 +47,7 @@ function EventCard(cardProps: EventCardProps) {
         <Date year={cardProps.date.year} day={cardProps.date.day} />
         <div className="w-9 h-9 bg-primary rounded-full" />
         <div className='flex flex-col md:flex-row gap-2'>
-          <div className="w-64 h-1/3 bg-white">texto</div>
+          <EventDescription title={cardProps.title} content={cardProps.content} />
           <div className="w-64">
             {cardProps.images?.map((image) => {
               return (<img src={image}></img>)
