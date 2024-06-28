@@ -28,7 +28,7 @@ const Header: React.FC = () => {
   return (
     <>
       <motion.div
-        className='fixed w-full p-5 md:pr-10 z-50 bg-background -mt-1'
+        className={`fixed w-full p-5 md:pr-10 z-50 ${window.scrollY < 225?'bg-transparent':'bg-background'}  -mt-1`}
         initial={{
           opacity: 1,
           y: 0
