@@ -107,11 +107,11 @@ function Projects() {
 
       <div className='bg-gradient-to-tr from-white to-primary
         w-full pt-20 pb-[3rem] md:p-20 mb-10 text-center text-4xl md:text-6xl
-        font-monteserrat font-bold text-background'>
+        font-monteserrat font-bold text-background '>
           PROJETOS
       </div>
 
-      <div className='flex flex-col justify-center items-center'>
+      <div className='flex flex-col justify-center items-center mb-20'>
         <ProjectNavbar frentes={frentes} setSelectedFrente={setSelectedFrente}/> 
 
         {/* <TextHighlight className='py-8 font-medium' img={devBoost} alt='Logo' title={selectedFrente.title} fontStyle='text-8xl'></TextHighlight> */}
