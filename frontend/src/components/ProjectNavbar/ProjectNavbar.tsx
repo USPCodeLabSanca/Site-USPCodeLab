@@ -42,7 +42,7 @@ export default function ProjectNavbar({frentes, setSelectedFrente}: ProjectNavba
         <div className="flex justify-center font-poppins font-semibold text-xs sm:text-sm md:text-2xl select-none ">
             {frentes.map((frente, index) => {
                 return(
-                    <div key={index} className={`flex gap-10 ${index == 0?'border-l':''}`}>
+                    <div key={index} className={`flex gap-10 ${index != 0?'border-l':''}`}>
                         <p 
                             className={`${frenteSelecionada == frente.code ?'text-primary':'text-lightGrayBackground'} mx-2 md:mx-10 cursor-pointer transition-colors`} 
                             onClick={()=>{
