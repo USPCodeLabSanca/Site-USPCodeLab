@@ -8,3 +8,7 @@ export { default as TextHighlight } from './TextHighlight/TextHightlight'
 export { default as ImageScroll } from './ImageScroll/ImageScroll';
 export { default as WhoAreWeSection } from './sections/WhoAreWeSection/WhoAreWeSection'
 export { default as WhoAreWeSectionV2 } from './sections/WhoAreWeSection/WhoAreWeSectionV2'
+export { default as WhoAreWeSectionV3 } from './sections/WhoAreWeSection/WhoAreWeSectionV3'
+export { default as EventCard } from './EventCard/EventCard';
+export { default as Parabola } from './Parabola/Parabola'
+export { default as EventDescription } from './EventDescription/EventDescription';
