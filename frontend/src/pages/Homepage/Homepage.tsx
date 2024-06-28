@@ -18,7 +18,7 @@ function Homepage() {
           alt='devBoost logo'
         ></TextHighlight> */}
         <div className='relative flex flex-col'>
-          <FrenteShape type={1} orientation='left' />
+          <FrenteShape type={3} orientation='left' />
         </div>
         <Footer />
       </div>
