@@ -20,7 +20,7 @@ const HomeSection: React.FC = () => {
       <motion.section
         ref={targetRef}
         style={{ opacity, scale, y }}
-        className='relative h-[100vh] overflow-hidden'
+        className='relative h-[125vh] overflow-hidden'
       >
         <div
           className=' flex flex-row items-center justify-items-start pt-5'>
@@ -46,7 +46,7 @@ const HomeSection: React.FC = () => {
               <div className='w-52 md:w-64 h-10 my-6'>
                 <Button content='Conhecer Agora!' onClick={() => {
                   const element = document.querySelector("#whoAreWe");
-                  element?.scrollIntoView({behavior: "smooth", block: "center"})
+                  element?.scrollIntoView({behavior: "smooth", block: "start"})
                 }}></Button>
               </div>
               <motion.a
