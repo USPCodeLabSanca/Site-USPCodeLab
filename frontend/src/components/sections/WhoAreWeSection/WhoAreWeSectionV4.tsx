@@ -33,16 +33,19 @@ const WhoAreWeSection: React.FC = () => {
   return (
     <>
       <section className='relative' id="whoAreWe">
-        <div className='text-center text-4xl md:text-6xl font-monteserrat font-medium text-primary mb-40'>Sobre nós</div>
-        <div className='grid grid-cols-2'>
-          <div className='w-full flex flex-col items-center'>
-            <motion.div className='sticky top-1/4 w-2/3'>
+        <div className='text-center text-4xl md:text-6xl font-monteserrat font-medium text-primary mb-20 md:mb-40'>Sobre nós</div>
+        <motion.div className='sticky top-0 w-full md:hidden'>
+          <ImageScroll images={imageArray}></ImageScroll>
+        </motion.div>
+        <div className='grid md:grid-cols-2 grid-cols-1'>
+          <div className='w-full hidden md:block'>
+            <motion.div className='sticky top-0 w-full md:top-1/4'>
               <ImageScroll images={imageArray}></ImageScroll>
             </motion.div>
           </div>
-          <div className='flex flex-col gap-64 items-start mt-24'>
-            {textArray.map((text) => {
-              return (<div className='w-2/3 font-poppins text-white font-normal text-base md:text-lg md:text-left md:mr-10 lg:text-xl'>{text}</div>)
+          <div className='flex flex-col gap-64 items-center md:items-center mt-24 mb-24'>
+            {textArray.map((text, index) => {
+              return (<div key={index} className='w-2/3 font-poppins text-white font-normal text-base md:text-lg md:text-left md:mr-10 lg:text-xl'>{text}</div>)
             })}
           </div>
         </div>
