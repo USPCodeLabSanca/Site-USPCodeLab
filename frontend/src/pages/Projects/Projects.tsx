@@ -82,7 +82,8 @@ function Projects() {
   //frente: codigo da frente selecionada
   //from: direcao em relacao a anterior ( para a animacao )
   const [selectedFrente, setSelectedFrente] = useState({frente:"todos", title: "Todos", from:"none", })
-  const [projectsToShow, setProjectsToShow] = useState<ProjectCardProps[]>(projectsList); // inicia mostrando todos os projetos
+  const [projectsToShow, setProjectsToShow] = useState<ProjectCardProps[][]>([]); // inicia mostrando todos os projetos
+  
   // const [description, setDescription] = useState(frentes[0].description);
   // const allProjects
 
@@ -94,26 +95,31 @@ function Projects() {
     // Update da frente selecionada
     // mudar os elementos da tela
 
-    // frentes.map(frente => {
-
-    // })
     
-    const newProjectsToShow = projectsList.filter((project) => {
-      return selectedFrente.frente === "todos" || selectedFrente.frente === project.codelabArea;
+    // const newProjectsToShow = projectsList.filter((project) => {
+    //   return selectedFrente.frente === "todos" || selectedFrente.frente === project.codelabArea;
+    // })
+
+    const projectsContainer: ProjectCardProps[][] = []
+
+
+    frentes.forEach((frente) => {
+      const array : ProjectCardProps[] = projectsList.filter((projeto) => {
+        return projeto.codelabArea == frente.code
+        
+      })
+
+      projectsContainer.push(array)
+
+      console.log(projectsContainer)
     })
-
-    let projectsContainer: ProjectCardProps[][]
-
-    frentes.map((frente, index) => projectsContainer[index] = projectsList.filter((project) => {
-      return frente.code === project.codelabArea;
-    })); 
     
     // console.log(projectsContainer);
     // TODO OBS!!! o jeito que foi feito pelo gabriel nao me da acesso as props das frente aqui em Projects.tsx, somente em Navbar
     // por isso estou redefinindo aqui. Pensar mais pra frente em um modo mais eficiente de fazer isso
     // const frenteAtual = frentes.filter( frente => { return frente.code == selectedFrente.frente});
 
-    setProjectsToShow(newProjectsToShow);
+    setProjectsToShow(projectsContainer);
     // setDescription(frenteAtual[0].description);
 
     if (selectedFrente.from === "left") {
@@ -149,26 +155,34 @@ function Projects() {
           </div>
               
 
-        <div className='w-[80%] '>
+        <div className='w-[100vw] '>
           {
-            
-            projectsToShow.map((project, index) => {
-              let op = 1;
-              let dis = 'block'
-              if (index == 0)  {op = 1; dis = 'block'}
-              return (
+
+            // projectsToShow.forEach((areas, ) => {
+            //   areas.map((project, p_index) => {
+            //     return (
+
+            //     )
+            //   })
+              
+            // })
+            // projectsToShow.map((project, index) => {
+            //   let op = 1;
+            //   let dis = 'block'
+            //   if (index == 0)  {op = 1; dis = 'block'}
+            //   return (
                 
-                <motion.div animate={
-                  {opacity: op,
-                    display : dis
-                  }
-                } transition={ { ease : 'easeInOut', duration : 0.8, delay : index * 0.1}}>
-                  <div className='pb-6 px-2 md:px-10'>
-                    <ProjectCard {...project}></ProjectCard>
-                  </div>
-                 </motion.div>
-            )
-            })
+            //     <motion.div key={index} animate={
+            //       {opacity: op,
+            //         display : dis
+            //       }
+            //     } transition={ { ease : 'easeInOut', duration : 0.8, delay : index * 0.1}}>
+            //       <div className='pb-6 px-2 md:px-10' key={index}>
+            //         <ProjectCard {...project}></ProjectCard>
+            //       </div>
+            //      </motion.div>
+            // )
+            // })
           }
         </div>
       </div>
