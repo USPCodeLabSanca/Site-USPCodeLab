@@ -5,8 +5,8 @@ const createProject = async (req: Request, res: Response) => {
   try {
     const { name, description, github_link, date, photo, id_group, technologies } = req.body
 
-    if (!name || !description || !github_link || !date || !id_group || !technologies)
-      return res.status(400).send({ error: 'Nome, descrição, link do github e data são obrigatórios.' })
+    if (!name || !description || !date || !id_group || !technologies)
+      return res.status(400).send({ error: 'Nome, descrição, frente e data são obrigatórios.' })
 
     const group = await prisma.group.findUnique({ where: { id_group } })
 
