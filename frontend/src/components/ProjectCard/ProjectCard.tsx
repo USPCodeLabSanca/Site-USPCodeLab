@@ -19,7 +19,7 @@ function ProjectCard(cardProps: ProjectCardProps){
     */
 
     return (
-        <div className="bg-grayBackground rounded-xl  flex  flex-col lg:flex-row px-6 py-5 gap-4 lg:justify-between">
+        <div className={`${cardProps.className} bg-grayBackground rounded-xl  flex  flex-col md:flex-row px-6 py-5 gap-4 md:justify-between`}>
 
             <div className="flex flex-col gap-1 md:justify-between md:gap-3 w-5/4">
                 
