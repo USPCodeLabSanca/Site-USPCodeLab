@@ -1,19 +1,17 @@
 
-import { Header, Footer, HomeSection,  } from 'src/components'
-import { FrenteSection, WhoAreWeSection } from 'src/components'
+import { Header, Footer, HomeSection, WhoAreWeSectionV4, FrenteSection } from 'src/components'
 
 function Homepage() {
   return (
     <>
-      <div className='bg-background overflow-x-hidden'>
+      <div className='bg-background'>
         <Header />
-
         <HomeSection />
-        <WhoAreWeSection />
-        {/* <WhoAreWeSectionV3 /> */}
-        {/* exemplo de uso do título */}
 
-        <FrenteSection />
+        <WhoAreWeSectionV4 />
+        <div className='mt-40'>
+          <FrenteSection />
+        </div>
 
         <Footer />
       </div>
