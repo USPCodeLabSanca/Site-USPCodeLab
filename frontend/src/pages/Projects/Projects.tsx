@@ -5,6 +5,11 @@ import { GithubDarkIcon, InstagramIcon, TelegramIcon, YoutubeIcon } from 'src/as
 import { ProjectCardProps } from 'src/types'
 import { useEffect, useState } from 'react'
 
+// import {fetchAPI} from 'src/services/fetchAPI';
+
+import {  motion } from 'framer-motion'
+
+
 // exemplo de dados que serao retirados do banco de dados e transformados em ProjectCardProps
 const projectsList : ProjectCardProps[] = [
   {
@@ -36,28 +41,28 @@ const projectsList : ProjectCardProps[] = [
     codelabArea : "todos"
   },
   {
-    title : "Projeto 4",
+    title : "Projeto 5",
     content : "Exemplo de projeto sem tag de area (todos)",
     icons : [GithubDarkIcon, InstagramIcon],
     iconLinks : ["github.com", "instagram.com"],
     codelabArea : "devlearn"
   },
   {
-    title : "Projeto 4",
+    title : "Projeto 6",
     content : "Exemplo de projeto sem tag de area (todos)",
     icons : [GithubDarkIcon, InstagramIcon],
     iconLinks : ["github.com", "instagram.com"],
     codelabArea : "devboost"
   },
   {
-    title : "Projeto 4",
+    title : "Projeto 7",
     content : "Exemplo de projeto sem tag de area (todos)",
     icons : [GithubDarkIcon, InstagramIcon],
     iconLinks : ["github.com", "instagram.com"],
     codelabArea : "devscrap"
   },
   {
-    title : "Projeto 4",
+    title : "Projeto 8",
     content : "Exemplo de projeto sem tag de area (todos)",
     icons : [GithubDarkIcon, InstagramIcon],
     iconLinks : ["github.com", "instagram.com"],
@@ -80,29 +85,52 @@ function Projects() {
   //frente: codigo da frente selecionada
   //from: direcao em relacao a anterior ( para a animacao )
   const [selectedFrente, setSelectedFrente] = useState({frente:"todos", title: "Todos", from:"none", })
-  const [projectsToShow, setProjectsToShow] = useState<ProjectCardProps[]>(projectsList); // inicia mostrando todos os projetos
-  const [description, setDescription] = useState(frentes[0].description);
+  const [projectsToShow, setProjectsToShow] = useState<ProjectCardProps[][]>([]); // inicia mostrando todos os projetos
+  const [x, setX] = useState(2);
 
+  // roda este useeffect uma vez para organizar as cards em listas
   useEffect(()=>{
-    // Update da frente selecionada
-    // mudar os elementos da tela
     
-    const newProjectsToShow = projectsList.filter((project) => {
-      return selectedFrente.frente === "todos" || selectedFrente.frente === project.codelabArea;
+    const projectsContainer: ProjectCardProps[][] = []
+
+    // oragniza cada card na lista de acordo com os tipos de frente (Exceto todos, que abrange todas as frentes)
+    frentes.forEach((frente) => {
+      const array : ProjectCardProps[] = projectsList.filter((projeto) => {
+        if (frente.code != 'todos') return projeto.codelabArea == frente.code
+        else return true
+        
+      })
+
+      projectsContainer.push(array)
+
+      console.log(projectsContainer)
     })
 
-    // TODO OBS!!! o jeito que foi feito pelo gabriel nao me da acesso as props das frente aqui em Projects.tsx, somente em Navbar
-    // por isso estou redefinindo aqui. Pensar mais pra frente em um modo mais eficiente de fazer isso
-    const frenteAtual = frentes.filter( frente => { return frente.code == selectedFrente.frente});
+    
+    setProjectsToShow(projectsContainer);
+   
 
-    setProjectsToShow(newProjectsToShow);
-    setDescription(frenteAtual[0].description);
+  },[])
 
-  },[selectedFrente])
+  useEffect(() => {
+    // a cada vez que a frente é selecionada, pega o index desta frente para poder transladar os elementos
+    let x = 0;
+    frentes.forEach((frente, index) => {
+      if (selectedFrente.frente == frente.code) {
+        x = index;
+      }
+    })
+
+    setX(x)
+
+  }, [selectedFrente])
+
+  
+  
+
 
   return (
     <>
-
       <Header />
 
       <div className='bg-gradient-to-tr from-white to-primary
@@ -111,27 +139,54 @@ function Projects() {
           PROJETOS
       </div>
 
+      
       <div className='flex flex-col justify-center items-center mb-20'>
         <ProjectNavbar frentes={frentes} setSelectedFrente={setSelectedFrente}/> 
 
-        {/* <TextHighlight className='py-8 font-medium' img={devBoost} alt='Logo' title={selectedFrente.title} fontStyle='text-8xl'></TextHighlight> */}
-
-        {/* <div className=' md:w-1/2'> */}
-              <div className='font-poppins text-textLightGrey text-justify text-sm md:text-base w-2/3 m-10'>
-                {description}
-              </div>
+        
+          <div className='font-poppins text-textLightGrey text-justify text-sm md:text-base w-2/3 m-10'>
+            {/* {description} */}
+          </div>
               
-        {/* </div> */}
 
-        <div className='w-[80%]'>
+        <div className='w-[100vw] flex flex-row overflow-hidden'>
           {
-            projectsToShow.map(project => {
+            // para cada frente
+            projectsToShow.map((area, index) => {
+              console.log("map: ", area)
               return (
-                <div className='pb-6 px-2 md:px-10'>
-                  <ProjectCard {...project}></ProjectCard>
-                </div>
-            )
-            })
+              <div className='w-[100%] ' key={index}>{
+                
+                // para cada projeto
+                area.map((project, key) => {
+
+                  return (
+                    <motion.div 
+                      className='pb-6 px-2 md:px-10 w-[100vw]' 
+                      key={key}
+                      animate ={{
+                          x : `calc(-${x*100}vw)`,                          
+                        }}
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ 
+                        
+                        duration : 0.2, 
+                        
+                        x : {
+                          type : 'spring', 
+                          ease : 'easeInOut', 
+                          duration : 0.5,
+                          delay : key * 0.1,
+                        }
+                        }}>
+                      <ProjectCard className='w-[60vw] mx-auto' {...project}></ProjectCard>
+                    </motion.div>
+                    
+                  )
+                })
+              }</div>
+            )})
+            
           }
         </div>
       </div>
