@@ -47,7 +47,7 @@ const WhoAreWeSection: React.FC = () => {
   // opacidade/escala do texto
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.7, 1], [1, 1, 1, 1]);
   const scale = useTransform(scrollYProgress, [0, 0.05, 0.2, 0.7, 1], [1, 1, 1, 1, 1]);
-  const y = useTransform(scrollYProgress, obj.imgDelta, [200, 160, 50, -50, -200])
+  const y = useTransform(scrollYProgress, obj.imgDelta, [-400, -200, 0, 200, 400])
 
   // opacidade de todas as imagens
   const imgOpacity = useTransform(scrollYProgress, [0.25, 0.3, 0.7, 0.8, 1], [1, 1, 1, 1, 0]);
@@ -76,7 +76,7 @@ const WhoAreWeSection: React.FC = () => {
     <>
       <section
         ref={targetRef}
-        className='relative h-[300vh]'
+        className='relative h-screen md:h-[200vh]'
         id="whoAreWe"
       >
         <motion.div
@@ -91,12 +91,12 @@ const WhoAreWeSection: React.FC = () => {
             </motion.div>
             <div className='flex flex-col items-center md:w-1/2'>
               <div className='font-poppins text-textGrey text-sm md:text-base md:text-center'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem nibh, varius id urna in,
-                faucibus iaculis ex. Vivamus maximus mauris sem, vestibulum ultrices libero dictum in. Aenean
-                sagittis tincidunt rhoncus. Vestibulum ut eros urna. Vivamus ut suscipit libero. Aliquam eget
-                dapibus ante, sagittis imperdiet ipsum. Nulla vel erat purus. Nullam sed semper magna. Fusce
-                elementum, enim a mollis fermentum, lectus nibh lacinia augue, et interdum tellus metus id erat.
-                Maecenas ut iaculis nibh. Nam sed lobortis est. In suscipit tristique ex ac auctor.
+                O CodeLab é um grupo de extensão da USP voltado para a geração de inovação tecnológica.
+                Nos organizamos em diferentes frentes para oferecer aulas de Web básico, estudar diversas
+                tecnologias e desenvolver projetos variados. Nosso objetivo é não apenas aprimorar nossas
+                habilidades técnicas, mas também impactar positivamente comunidades dentro e fora da USP.
+                Somos um grupo descontraído, com membros genuinamente interessados em aprender novas tecnologias
+                e criar projetos incríveis!
               </div>
               <div className='w-52 md:w-64 h-10 mt-10'>
                 <Button content='Como participar?'></Button>
