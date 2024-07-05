@@ -5,7 +5,10 @@ import { GithubDarkIcon, InstagramIcon, TelegramIcon, YoutubeIcon } from 'src/as
 import { ProjectCardProps } from 'src/types'
 import { useEffect, useState } from 'react'
 
-import { motion } from 'framer-motion'
+// import {fetchAPI} from 'src/services/fetchAPI';
+
+import {  motion } from 'framer-motion'
+
 
 // exemplo de dados que serao retirados do banco de dados e transformados em ProjectCardProps
 const projectsList : ProjectCardProps[] = [
@@ -38,28 +41,28 @@ const projectsList : ProjectCardProps[] = [
     codelabArea : "todos"
   },
   {
-    title : "Projeto 4",
+    title : "Projeto 5",
     content : "Exemplo de projeto sem tag de area (todos)",
     icons : [GithubDarkIcon, InstagramIcon],
     iconLinks : ["github.com", "instagram.com"],
     codelabArea : "devlearn"
   },
   {
-    title : "Projeto 4",
+    title : "Projeto 6",
     content : "Exemplo de projeto sem tag de area (todos)",
     icons : [GithubDarkIcon, InstagramIcon],
     iconLinks : ["github.com", "instagram.com"],
     codelabArea : "devboost"
   },
   {
-    title : "Projeto 4",
+    title : "Projeto 7",
     content : "Exemplo de projeto sem tag de area (todos)",
     icons : [GithubDarkIcon, InstagramIcon],
     iconLinks : ["github.com", "instagram.com"],
     codelabArea : "devscrap"
   },
   {
-    title : "Projeto 4",
+    title : "Projeto 8",
     content : "Exemplo de projeto sem tag de area (todos)",
     icons : [GithubDarkIcon, InstagramIcon],
     iconLinks : ["github.com", "instagram.com"],
@@ -83,29 +86,18 @@ function Projects() {
   //from: direcao em relacao a anterior ( para a animacao )
   const [selectedFrente, setSelectedFrente] = useState({frente:"todos", title: "Todos", from:"none", })
   const [projectsToShow, setProjectsToShow] = useState<ProjectCardProps[][]>([]); // inicia mostrando todos os projetos
-  
-  // const [description, setDescription] = useState(frentes[0].description);
-  // const allProjects
+  const [x, setX] = useState(2);
 
-  useEffect(() => {
-    
-  })
-
+  // roda este useeffect uma vez para organizar as cards em listas
   useEffect(()=>{
-    // Update da frente selecionada
-    // mudar os elementos da tela
-
     
-    // const newProjectsToShow = projectsList.filter((project) => {
-    //   return selectedFrente.frente === "todos" || selectedFrente.frente === project.codelabArea;
-    // })
-
     const projectsContainer: ProjectCardProps[][] = []
 
-
+    // oragniza cada card na lista de acordo com os tipos de frente (Exceto todos, que abrange todas as frentes)
     frentes.forEach((frente) => {
       const array : ProjectCardProps[] = projectsList.filter((projeto) => {
-        return projeto.codelabArea == frente.code
+        if (frente.code != 'todos') return projeto.codelabArea == frente.code
+        else return true
         
       })
 
@@ -113,25 +105,29 @@ function Projects() {
 
       console.log(projectsContainer)
     })
+
     
-    // console.log(projectsContainer);
-    // TODO OBS!!! o jeito que foi feito pelo gabriel nao me da acesso as props das frente aqui em Projects.tsx, somente em Navbar
-    // por isso estou redefinindo aqui. Pensar mais pra frente em um modo mais eficiente de fazer isso
-    // const frenteAtual = frentes.filter( frente => { return frente.code == selectedFrente.frente});
-
     setProjectsToShow(projectsContainer);
-    // setDescription(frenteAtual[0].description);
+   
 
-    if (selectedFrente.from === "left") {
-      setX('-110%');
-    } else if (selectedFrente.from === "right") {
-      setX('0%');
-    }
+  },[])
 
-  },[selectedFrente])
+  useEffect(() => {
+    // a cada vez que a frente é selecionada, pega o index desta frente para poder transladar os elementos
+    let x = 0;
+    frentes.forEach((frente, index) => {
+      if (selectedFrente.frente == frente.code) {
+        x = index;
+      }
+    })
 
-  const [x, setX] = useState('0');
+    setX(x)
+
+  }, [selectedFrente])
+
   
+  
+
 
   return (
     <>
@@ -143,9 +139,7 @@ function Projects() {
           PROJETOS
       </div>
 
-      <motion.div className='box w-8 h-8 bg-white' animate={{x}} transition={{type: "spring", delay : 0.1}}  />
-      <button className='bg-white' onClick={()=> {setX('0')}}>+</button>
-
+      
       <div className='flex flex-col justify-center items-center mb-20'>
         <ProjectNavbar frentes={frentes} setSelectedFrente={setSelectedFrente}/> 
 
@@ -155,9 +149,41 @@ function Projects() {
           </div>
               
 
-        <div className='w-[100vw] '>
+        <div className='w-[100vw] flex flex-row overflow-hidden'>
           {
+            projectsToShow.map((area, index) => {
+              console.log("map: ", area)
+              return (
+              <div className='w-[100%] ' key={index}>{
 
+                area.map((project, key) => {
+
+                  return (
+                    <motion.div 
+                      className='pb-6 px-2 md:px-10 w-[100vw]' 
+                      key={key}
+                      animate ={{
+                          x : `calc(-${x*100}vw)`,                          
+                        }}
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ 
+                        
+                        duration : 0.2, 
+                        
+                        x : {
+                          type : 'spring', 
+                          ease : 'easeInOut', 
+                          duration : 0.5,
+                          delay : key * 0.1,
+                        }
+                        }}>
+                      <ProjectCard className='w-[60vw] mx-auto' {...project}></ProjectCard>
+                    </motion.div>
+                    
+                  )
+                })
+              }</div>
+            )})
             // projectsToShow.forEach((areas, ) => {
             //   areas.map((project, p_index) => {
             //     return (
