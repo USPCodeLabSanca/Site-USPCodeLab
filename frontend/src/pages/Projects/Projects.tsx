@@ -151,11 +151,13 @@ function Projects() {
 
         <div className='w-[100vw] flex flex-row overflow-hidden'>
           {
+            // para cada frente
             projectsToShow.map((area, index) => {
               console.log("map: ", area)
               return (
               <div className='w-[100%] ' key={index}>{
-
+                
+                // para cada projeto
                 area.map((project, key) => {
 
                   return (
@@ -184,31 +186,7 @@ function Projects() {
                 })
               }</div>
             )})
-            // projectsToShow.forEach((areas, ) => {
-            //   areas.map((project, p_index) => {
-            //     return (
-
-            //     )
-            //   })
-              
-            // })
-            // projectsToShow.map((project, index) => {
-            //   let op = 1;
-            //   let dis = 'block'
-            //   if (index == 0)  {op = 1; dis = 'block'}
-            //   return (
-                
-            //     <motion.div key={index} animate={
-            //       {opacity: op,
-            //         display : dis
-            //       }
-            //     } transition={ { ease : 'easeInOut', duration : 0.8, delay : index * 0.1}}>
-            //       <div className='pb-6 px-2 md:px-10' key={index}>
-            //         <ProjectCard {...project}></ProjectCard>
-            //       </div>
-            //      </motion.div>
-            // )
-            // })
+            
           }
         </div>
       </div>
