@@ -26,7 +26,10 @@ function FrenteShape({ type, orientation }: FrenteShapeProps) {
 
   return (
     <div className="w-full flex items-center justify-center">
-        <img src={Shape.toString()} alt="Shape" className={`${orientation === 'left' ? '-translate-x-[10rem] sm:-translate-x-[20rem] md:-translate-x-[25rem] lg:-translate-x-[45rem]' : 'translate-x-[10rem] sm:translate-x-[20rem] md:translate-x-[25rem] lg:translate-x-[45rem]'} h-[60rem] transform`}/> 
+        <img 
+          src={Shape.toString()} 
+          alt="Shape" 
+          className={` ${orientation === 'left' ? '-translate-x-[10rem] sm:-translate-x-[20rem] md:-translate-x-[25rem] lg:-translate-x-[45rem]' : 'translate-x-[10rem] sm:translate-x-[20rem] md:translate-x-[25rem] lg:translate-x-[45rem]'} h-[60rem] transform`}/> 
     </div>
   );
 }
