@@ -3,7 +3,9 @@ import { FrenteProps } from 'src/types'
 
 import { GithubDarkIcon, InstagramIcon, TelegramIcon, YoutubeIcon } from 'src/assets'
 import { ProjectCardProps } from 'src/types'
+import { getProjects, getGroups, getTechnologys } from 'src/services'
 import { useEffect, useState } from 'react'
+
 
 // exemplo de dados que serao retirados do banco de dados e transformados em ProjectCardProps
 const projectsList : ProjectCardProps[] = [
@@ -75,6 +77,18 @@ const frentes : FrenteProps[] = [
 ]
 
 function Projects() {
+
+  //Funções para puxar os dados da API
+
+  // const [projects, setProjects] = useState([])
+  // const [groups, setGroups] = useState([])
+  // const [technologys, setTechnologys] = useState([])
+
+  // useEffect(() => {
+  //   getProjects();
+  //   getGroups();
+  //   getTechnologys();
+  // }, [])
   
   //Marca qual é a frente que foi selectionada até entao
   //frente: codigo da frente selecionada

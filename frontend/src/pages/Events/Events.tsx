@@ -1,8 +1,18 @@
 import { EventCard, Footer, Header, Parabola } from 'src/components';
 import { hackfoolsImage0 } from 'src/assets';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getEvents } from 'src/services/index'
 
 function Events() {
+
+  //Função para puxar os dados da API
+
+  // const [events, setEvents] = useState([])
+
+  // useEffect(() => {
+  //   getEvents();
+  // }, [])
+
   const event = {
     date: {
       year: "2023",
