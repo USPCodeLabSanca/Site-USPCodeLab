@@ -12,6 +12,7 @@ export { default as FrenteCard } from './FrenteCard/FrenteCard.tsx'
 export { default as FrenteSection } from './sections/FrenteSection/FrenteSection.tsx'
 export { default as FrenteShape} from './FrenteShape/FrenteShape.tsx'
 export { default as WhoAreWeSectionV3 } from './sections/WhoAreWeSection/WhoAreWeSectionV3'
+export { default as WhoAreWeSectionV4 } from './sections/WhoAreWeSection/WhoAreWeSectionV4'
 export { default as EventCard } from './EventCard/EventCard';
 export { default as Parabola } from './Parabola/Parabola'
 export { default as EventDescription } from './EventDescription/EventDescription';
