@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+body {
+  background-color: #292524;
+}
+
 ::-webkit-scrollbar {
     height: 12px;
     width: 5px;
@@ -18,4 +22,3 @@
   ::-webkit-scrollbar-corner {
     background: #292524;
   }
-  

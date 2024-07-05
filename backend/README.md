@@ -24,6 +24,6 @@ Faz suas alterações no schema.prisma e depois basta mandar uns comandinhos leg
 
 ```bash
 make run-migration-docker message="eu_amo_viver_e_essa_migration_mostra_isso"
-make run-generate-docker
+npx prisma generate
 make restart-docker
 ```

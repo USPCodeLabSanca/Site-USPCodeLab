@@ -13,17 +13,17 @@ const HomeSection: React.FC = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 1]);
   const scale = useTransform(scrollYProgress, [0, 0.75], [1, 1]);
-  const y = useTransform(scrollYProgress, [0, 0.5], [0, 200]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 0]);
 
   return (
     <>
       <motion.section
         ref={targetRef}
         style={{ opacity, scale, y }}
-        className='relative h-[100vh]'
+        className='relative h-[100vh] overflow-hidden'
       >
         <div
-          className='sticky top-0 flex flex-row items-center justify-items-start overflow-hidden'>
+          className=' flex flex-row items-center justify-items-start pt-5'>
           <motion.div
             animate={{ x: 100 }}
             transition={{ duration: 2 }}
