@@ -1,5 +1,5 @@
-import { Header, Footer, HomeSection, WhoAreWeSectionV4 } from 'src/components'
-import FrenteShape from 'src/components/FrenteShape/FrenteShape'
+
+import { Header, Footer, HomeSection, WhoAreWeSectionV4, FrenteSection } from 'src/components'
 
 function Homepage() {
   return (
@@ -7,11 +7,12 @@ function Homepage() {
       <div className='bg-background'>
         <Header />
         <HomeSection />
+
         <WhoAreWeSectionV4 />
-        <div className='relative flex flex-col overflow-hidden'>
-          <FrenteShape type={3} orientation='left' />
-          <FrenteShape type={3} orientation='right' />
+        <div className='mt-40'>
+          <FrenteSection />
         </div>
+
         <Footer />
       </div>
     </>
