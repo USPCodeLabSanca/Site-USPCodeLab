@@ -7,7 +7,7 @@ import Icon from '../Icon/Icon';
 const Footer: React.FC = () => {
   return (
     <>
-      <div className='w-full px-0 py-0 bg-grayBackground'>
+      <div className='relative w-full px-0 py-0 bg-grayBackground'>
         <div className='w-full flex flex-col items-center py-10 text-textLightGrey font-poppins'>
           <div className='font-bold text-2xl sm:text-3xl'>Embarque conosco!</div>
           <div className='text-sm sm:text-lg'>Fique conectado com o Codelab!</div>
