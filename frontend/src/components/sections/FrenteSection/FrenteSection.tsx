@@ -1,4 +1,5 @@
 import { devBoost } from 'src/assets'
+import { devlearnImage0 } from 'src/assets'
 import FrenteCard from 'src/components/FrenteCard/FrenteCard'
 
 
@@ -7,13 +8,40 @@ const frenteobject = [
         "title": "Dev.Boost",
         "subtitle": "O grupinho dos códigos e projetos do Codelab!",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem nibh, varius id urna in.",
-        "img": {devBoost}
+        "logoImg": {devBoost},
+        "bgImage": {devlearnImage0}
     },
     {
         "title": "Dev.Learn",
         "subtitle": "O grupinho dos códigos e projetos do Codelab!",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem nibh, varius id urna in.",
-        "img": {devBoost}
+        "logoImg": {devBoost},
+        "bgImage": {devlearnImage0}
+
+    },
+    {
+        "title": "Dev.Learn",
+        "subtitle": "O grupinho dos códigos e projetos do Codelab!",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem nibh, varius id urna in.",
+        "logoImg": {devBoost},
+        "bgImage": {devlearnImage0}
+
+    },
+    {
+        "title": "Dev.Learn",
+        "subtitle": "O grupinho dos códigos e projetos do Codelab!",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem nibh, varius id urna in.",
+        "logoImg": {devBoost},
+        "bgImage": {devlearnImage0}
+
+    },
+    {
+        "title": "Dev.Learn",
+        "subtitle": "O grupinho dos códigos e projetos do Codelab!",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem nibh, varius id urna in.",
+        "logoImg": {devBoost},
+        "bgImage": {devlearnImage0}
+
     }
 ]
 
@@ -29,7 +57,8 @@ const FrenteSection : React.FC = () => {
                 subtitle={frente.subtitle}
                 text={frente.text}
                 fontStyle='font-poppins text-textLightGrey'
-                img={devBoost}
+                logoImg={devBoost}
+                image={devlearnImage0}
                 />  
             )
         })
