@@ -10,6 +10,7 @@ import {
   hackfoolsImage4
 } from 'src/assets';
 import { motion } from 'framer-motion';
+import TextAnimation from './TextAnimation/TextAnimation';
 
 const WhoAreWeSection: React.FC = () => {
 
@@ -43,9 +44,9 @@ const WhoAreWeSection: React.FC = () => {
               <ImageScroll images={imageArray}></ImageScroll>
             </motion.div>
           </div>
-          <div className='flex flex-col gap-64 items-center md:items-center mt-24 mb-24'>
+          <div className='flex flex-col gap-64 items-center mt-24 mb-24'>
             {textArray.map((text, index) => {
-              return (<div key={index} className='w-2/3 font-poppins text-white font-normal text-base md:text-lg md:text-left md:mr-10 lg:text-xl'>{text}</div>)
+              return (<TextAnimation key={index} text={text}/>)
             })}
           </div>
         </div>

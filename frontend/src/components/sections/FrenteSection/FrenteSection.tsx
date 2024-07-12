@@ -46,9 +46,8 @@ const frenteobject = [
 ]
 
 const FrenteSection : React.FC = () => {
-    return(
+    return (
         frenteobject.map((frente, key) => {
-    
             return(
                 <FrenteCard
                 key={key}
