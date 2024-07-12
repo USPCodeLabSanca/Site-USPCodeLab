@@ -9,8 +9,7 @@ function Homepage() {
         <HomeSection />
 
         <WhoAreWeSectionV4 />
-        <div className='mt-40
-        '>
+        <div className='mt-[50vh] overflow-x-hidden'>
           <FrenteSection />
         </div>
 
