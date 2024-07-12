@@ -9,7 +9,8 @@ function Homepage() {
         <HomeSection />
 
         <WhoAreWeSectionV4 />
-        <div className='mt-40'>
+        <div className='mt-40
+        '>
           <FrenteSection />
         </div>
 

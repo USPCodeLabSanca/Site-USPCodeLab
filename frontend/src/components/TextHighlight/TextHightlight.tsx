@@ -12,8 +12,9 @@ const TextHighlight: React.FC<TextHighlightProps> = ({ className, img, alt, titl
   return (
     <div className={`flex flex-row gap-4 items-center ${className}`}>
       {img && (
-        <div className="w-14 h-14 lg:h-20 lg:w-20 rounded-full bg-white overflow-hidden flex-shrink-0">
-          <img src={img} alt={alt} className="w-full h-full object-cover" />
+        <div className="w-14 h-14 lg:h-20 lg:w-20 relative">
+          <div className="w-full h-full rounded-full bg-white overflow-hidden flex-shrink-0 z-0"/>
+          <img src={img} alt={alt} className="absolute top-0 w-full h-full object-cover z-40" />
         </div>
       )}
       <div className="relative flex">
