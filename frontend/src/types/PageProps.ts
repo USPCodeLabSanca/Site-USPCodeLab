@@ -20,11 +20,11 @@ export interface BaseClassNameProps {
 
 // propr que define um card de projeto para a pagina de projetos
 export interface ProjectCardProps extends BaseClassNameProps {
-    title : string,
-    content : string,
+    title: string,
+    content: string,
     icons?: React.FC[] | SVGType[],
     iconLinks?: string[],
-    codelabArea? : string
+    codelabArea?: string
 }
 
 // propriedade para definir as caracteristicas de uma frente
@@ -35,30 +35,30 @@ export interface FrenteProps {
     description?: string
 }
 
-interface DateProps {
-    year: string
-    day: string
+export interface DateProps {
+    date: Date;
 }
 
 // props para o componente de evento
 export interface EventCardProps {
-    date: DateProps,
+    date: Date,
     title: string,
     content: string,
-    images?: string[],
+    image: string,
     offset: number,
     h: number,
+    setBg: (image: string) => void,
 }
 
 // Interface que define o formato de um objeto que representa uma frente e a direcao dela para o componente pai
-export interface SelectedFrenteProps{
+export interface SelectedFrenteProps {
     frente: string,
     title: string
     from: string
 }
 
 // Interface que define as propriedades do componente ProjectNavbar
-export interface ProjectNavbarProps{
+export interface ProjectNavbarProps {
     frentes: FrenteProps[];
     setSelectedFrente: (frente: SelectedFrenteProps) => void
 }

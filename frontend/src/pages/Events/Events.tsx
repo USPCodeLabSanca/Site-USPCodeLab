@@ -1,28 +1,74 @@
 import { EventCard, Footer, Header, Parabola } from 'src/components';
-import { hackfoolsImage0 } from 'src/assets';
+import { hackfoolsImage0, hackfoolsImage1, hackfoolsImage3, hackfoolsImage2 } from 'src/assets';
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { fetchAPI } from 'src/services';
 
 function Events() {
-  const event = {
-    date: {
-      year: "2023",
-      day: "14 de Abril"
+  const eventArray = [
+    {
+      date: new Date(),
+      title: "HackFools",
+      content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
+      image: hackfoolsImage0,
     },
-    title: "HackFools",
-    content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
-    image: [hackfoolsImage0],
-  }
+    {
+      date: new Date(),
+      title: "HackFools",
+      content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
+      image: hackfoolsImage1,
+    }, {
+      date: new Date(),
+      title: "HackFools",
+      content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
+      image: hackfoolsImage2,
+    }, {
+      date: new Date(),
+      title: "HackFools",
+      content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
+      image: hackfoolsImage3,
+    }, {
+      date: new Date(),
+      title: "HackFools",
+      content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
+      image: hackfoolsImage0,
+    },
+  ]
 
   const [h, setH] = useState(window.innerHeight);
   window.addEventListener("resize", () => {
     setH(window.innerHeight);
   });
 
-  // Generate an array of offsets [0, 300, 600, ..., 1800]
-  const offsets = Array.from({ length: 15 }, (_, index) => index * h / 2 + h / 2);
+  const [bgImage, setBgImage] = useState<string | null>(null);
 
   return (
-    <div className='relative bg-background'>
+    <div
+      className='relative bg-center bg-background'>
+      <AnimatePresence>
+        {bgImage && (
+          <motion.div
+            key={bgImage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="absolute w-full h-full bg-cover"
+            style={{
+              backgroundImage: `radial-gradient(circle at center, rgba(0,0,0,0) 70%, #292524 90%), 
+                                radial-gradient(circle at center, rgba(0,0,0,0) 0%, #292524 100%),
+                                url(${bgImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundAttachment: 'fixed',
+              backgroundRepeat: 'no-repeat',
+              WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)',
+              maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)',
+            }}
+          />
+        )}
+      </AnimatePresence>
+
       <Header />
 
       <div className='hidden lg:block -z-10'>
@@ -41,18 +87,25 @@ function Events() {
         font-monteserrat font-bold text-background z-10'>EVENTOS</div>
 
       <div
-        className='sticky bg-background z-0 font-monteserrat font-medium text-white text-center'
+        className='sticky z-0 font-monteserrat font-medium text-white text-center'
         style={{
           height: 4 / 5 * h,
           paddingTop: 7 / 10 * h
         }}>
-        Aqui você encontra os nossos eventos passados!
       </div>
 
       <div
         className='flex flex-col items-start'>
-        {offsets.map(offset => (
-          <EventCard date={event.date} title={event.title} content={event.content} images={event.image} offset={offset} h={h} key={offset} />
+        {eventArray.map((event, index) => (
+          <EventCard
+            date={event.date}
+            title={event.title}
+            content={event.content}
+            image={event.image}
+            offset={index * h / 2 + h / 2}
+            h={h}
+            key={index}
+            setBg={setBgImage} />
         ))}
       </div>
       <Footer />
