@@ -13,7 +13,7 @@ interface FrenteCardProps {
 const FrenteCard: React.FC<FrenteCardProps> = ({ index, title, subtitle, text, fontStyle, logoImg, image }) => {
     if(index == undefined) index = 0
     return (
-    <div className="m-6 relative h-96 my-40">
+    <div className="m-6 relative h-[150vh] my-40">
       <FrenteShape type={index} orientation={index % 2 == 0 ? 'left' : 'right'} image={image} />
       <div className={`absolute top-0 ${ index %2 ==0? 'right-0 lg:right-[10%]':'left-0 lg:left-[10%]'} `}>
         <div className="flex flex-col sm:w-min">
