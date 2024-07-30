@@ -1,1 +1,1 @@
-export * from './fetchAPI';
+export { default as API } from './handlers.ts'

@@ -14,7 +14,7 @@ function EventDescription({ title, content }: EventDescriptionProps) {
       img: string 
   */
   return (
-    <div className="flex flex-col md:justify-start md:gap-5 pl-10 md:px-9 bg-transparent">
+    <div className="flex flex-col md:justify-start md:gap-5 md:px-9 bg-transparent">
       
       <div className="gap-1 md:justify-between md:gap-3">
         <TextHighlight

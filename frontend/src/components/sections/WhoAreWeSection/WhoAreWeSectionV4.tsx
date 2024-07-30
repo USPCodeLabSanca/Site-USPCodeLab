@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageScroll } from '../../index';
+import { Button, ImageScroll } from '../../index';
 import {
   devlearnImage0,
   devlearnImage1,
@@ -46,8 +46,17 @@ const WhoAreWeSection: React.FC = () => {
           </div>
           <div className='flex flex-col gap-64 items-center mt-24 mb-24'>
             {textArray.map((text, index) => {
-              return (<TextAnimation key={index} text={text}/>)
+              return (<TextAnimation key={index} text={text} />)
             })}
+          </div>
+        </div>
+
+        <div className='h-[50vh] grid md:grid-cols-2 grid-cols-1 items-center justify-items-center'>
+          <div className='w-52 md:w-64 h-10 my-6 md:col-start-2'>
+            <Button content='Como participar?' onClick={() => {
+              const element = document.querySelector("#contribute");
+              element?.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" })
+            }}></Button>
           </div>
         </div>
       </section>
