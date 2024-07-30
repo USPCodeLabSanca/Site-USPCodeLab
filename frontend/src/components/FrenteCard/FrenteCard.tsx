@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { FrenteShape, TextHighlight } from 'src/components';
 
 interface FrenteCardProps {
@@ -11,12 +12,24 @@ interface FrenteCardProps {
 }
 
 const FrenteCard: React.FC<FrenteCardProps> = ({ index, title, subtitle, text, fontStyle, logoImg, image }) => {
-    if(index == undefined) index = 0
-    return (
-    <div className="m-6 relative h-[150vh] my-40">
+  if (index == undefined) index = 0
+  return (
+    <div className="p-6 relative h-3/4 my-32 md:my-64 grid md:grid-cols-2 md:grid-rows-1 grid-rows-2">
       <FrenteShape type={index} orientation={index % 2 == 0 ? 'left' : 'right'} image={image} />
-      <div className={`absolute top-0 ${ index %2 ==0? 'right-0 lg:right-[10%]':'left-0 lg:left-[10%]'} `}>
-        <div className="flex flex-col sm:w-min">
+      <motion.div
+        initial={index % 2 != 0 ?
+          { x: -250, rotate: -10, } :
+          { x: 250, rotate: 10 }}
+        whileInView={{ x: 0, rotate: 0 }}
+        exit={index % 2 != 0 ?
+          { x: -250, rotate: -10, } :
+          { x: 250, rotate: 10 }}
+        transition={{
+          duration: 1,
+          type: 'spring'
+        }}
+        className={`${index % 2 == 0 ? 'md:col-start-2' : 'md:col-start-1'} `}>
+        <div className="flex flex-col">
           <div className="w-min">
             <TextHighlight
               title={title}
@@ -25,12 +38,12 @@ const FrenteCard: React.FC<FrenteCardProps> = ({ index, title, subtitle, text, f
               alt={`${logoImg} logo`}
             />
           </div>
-          <div className="pl-10 py-10 md:w-full">
-            <p className={`text-2xl pb-6 font-semibold ${fontStyle}`}>{subtitle}</p>
-            <p className={`text-xl ${fontStyle}`}>{text}</p>
+          <div className="px-10 md:pr-0 py-10 md:w-full">
+            <p className={`text-lg md:text-2xl pb-6 font-semibold ${fontStyle}`}>{subtitle}</p>
+            <p className={`text-base md:text-xl ${fontStyle}`}>{text}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

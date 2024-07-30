@@ -1,5 +1,5 @@
 
-import { Header, Footer, HomeSection, WhoAreWeSectionV4, FrenteSection } from 'src/components'
+import { Header, Footer, HomeSection, WhoAreWeSectionV4, FrenteSection, ContributeSection } from 'src/components'
 
 function Homepage() {
   return (
@@ -9,9 +9,11 @@ function Homepage() {
         <HomeSection />
 
         <WhoAreWeSectionV4 />
-        <div className='mt-[50vh] overflow-x-hidden'>
+        <div className='overflow-hidden'>
           <FrenteSection />
         </div>
+
+        <ContributeSection/>
 
         <Footer />
       </div>
