@@ -34,7 +34,7 @@ function EventCard(cardProps: EventCardProps) {
 
   return (
     <section
-      className={"relative md:ml-20"}
+      className={"relative md:ml-20 w-full"}
       style={{
         height: cardProps.h / 2,
       }}
@@ -44,12 +44,12 @@ function EventCard(cardProps: EventCardProps) {
           x,
           scale,
           opacity,
-          transformOrigin: '10% center'
+          transformOrigin: '13% center'
         }}
-        className="flex flex-row sticky align-top h-1/2 w-full gap-4 z-10">
+        className="flex flex-row sticky align-top h-1/2 gap-4 z-10">
         <Date date={cardProps.date} />
         <motion.div
-          className='flex flex-col md:flex-row w-full h-full'>
+          className='flex flex-col md:flex-row w-2/3 h-full'>
           <div className='md:w-3/4'>
             <EventDescription title={cardProps.title} content={cardProps.content} />
           </div>

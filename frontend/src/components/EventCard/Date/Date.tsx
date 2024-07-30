@@ -15,9 +15,9 @@ function EventCard(date: DateProps) {
                       monthNum === 10 ? "Novembro" :
                         monthNum === 11 ? "Dezembro" : "";
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-24">
       <div className="text-2xl md:text-4xl font-monteserrat font-medium text-white text-center">{date.date.getFullYear()}</div>
-      <div className="text-xl md:text-2xl font-monteserrat font-light text-textGrey text-center">{`${date.date.getDate()} de ${month}`}</div>
+      <div className="text-xl md:text-2xl font-monteserrat font-light text-white text-center">{`${date.date.getDate()} de ${month}`}</div>
     </div>
   )
 }

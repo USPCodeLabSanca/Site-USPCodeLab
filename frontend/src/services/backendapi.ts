@@ -1,3 +1,3 @@
 
-export const BACKEND_IP = process.env.REACT_APP_BACKEND_IP;
+export const BACKEND_IP = import.meta.env.VITE_BACKEND_IP;
 

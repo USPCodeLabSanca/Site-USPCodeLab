@@ -6,11 +6,10 @@ export const fetchAPI = async (endpoint : string) => {
             method : 'GET'
         });
 
-        const resJson = res.json();
+        const resJson = await res.json();
         
         if (res.status == 200) {
             return resJson;
-                
         } else {
             console.error(res.statusText)
             return null

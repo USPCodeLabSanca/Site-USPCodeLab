@@ -28,12 +28,12 @@ const HomeSection: React.FC = () => {
             animate={{ x: 100 }}
             transition={{ duration: 2 }}
             className='w-full h-screen ml-[-100px] md:ml-0 p-8 md:p-24 md:pr-12 md:pl-0 flex flex-col gap-8 md:gap-5 justify-center'>
-            <div className='flex flex-col items-start md:flex-row md:items-end'>
+            <div className='flex flex-col items-start lg:flex-row lg:items-end'>
               <div className='text-8xl md:text-9xl font-monteserrat font-medium text-white'>Code</div>
               <div className='text-8xl md:text-9xl font-monteserrat font-normal text-textGrey'>Lab</div>
-              <div className='text-2xl md:text-3xl font-monteserrat font-normal text-primary ml-2 mb-3 md:ml-0'>sanca</div>
+              <div className='text-2xl md:text-3xl font-monteserrat font-normal text-primary ml-2 mb-3 lg:ml-0'>sanca</div>
             </div>
-            <div className='flex flex-col gap-2 ml-2 md:ml-0'>
+            <div className='flex flex-col gap-2 ml-2 md:ml-0 md:w-1/2 lg:w-full'>
               <div className='text-base md:text-xl font-monteserrat font-medium text-white flex flex-wrap gap-1'>
                 O Grupo de
                 <TextHighlight title='Desenvolvimento' fontStyle='text-base md:text-xl font-monteserrat font-medium' />
@@ -46,7 +46,7 @@ const HomeSection: React.FC = () => {
               <div className='w-52 md:w-64 h-10 my-6'>
                 <Button content='Conhecer Agora!' onClick={() => {
                   const element = document.querySelector("#whoAreWe");
-                  element?.scrollIntoView({behavior: "smooth", block: "start"})
+                  element?.scrollIntoView({ behavior: "smooth", block: "start" })
                 }}></Button>
               </div>
               <motion.a

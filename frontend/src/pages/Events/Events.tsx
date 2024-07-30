@@ -1,39 +1,66 @@
 import { EventCard, Footer, Header, Parabola } from 'src/components';
+import { Event } from 'src/types';
 import { hackfoolsImage0, hackfoolsImage1, hackfoolsImage3, hackfoolsImage2 } from 'src/assets';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { fetchAPI } from 'src/services';
+import { API } from 'src/services';
+
+
+/*
+date: string,
+    name: string,
+    description: string,
+    photo: string,
+    id_event: number,
+*/
+const eventsExample: Event[] = [
+  {
+    date: (new Date()).toUTCString(),
+    name: "HackFools",
+    description: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
+    photo: hackfoolsImage0,
+    id_event: 0,
+  },
+  {
+    date: (new Date()).toUTCString(),
+    name: "HackFools",
+    description: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
+    photo: hackfoolsImage1,
+    id_event: 1,
+  },
+  {
+    date: (new Date()).toUTCString(),
+    name: "HackFools",
+    description: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
+    photo: hackfoolsImage2,
+    id_event: 2,
+  },
+  {
+    date: (new Date()).toUTCString(),
+    name: "HackFools",
+    description: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
+    photo: hackfoolsImage3,
+    id_event: 3,
+  },
+  {
+    date: (new Date()).toUTCString(),
+    name: "HackFools",
+    description: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
+    photo: hackfoolsImage0,
+    id_event: 4,
+  },
+]
 
 function Events() {
-  const eventArray = [
-    {
-      date: new Date(),
-      title: "HackFools",
-      content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
-      image: hackfoolsImage0,
-    },
-    {
-      date: new Date(),
-      title: "HackFools",
-      content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
-      image: hackfoolsImage1,
-    }, {
-      date: new Date(),
-      title: "HackFools",
-      content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
-      image: hackfoolsImage2,
-    }, {
-      date: new Date(),
-      title: "HackFools",
-      content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
-      image: hackfoolsImage3,
-    }, {
-      date: new Date(),
-      title: "HackFools",
-      content: "Hackathon voltado para alunos do 1º ano de Ciências da Computação. Em um fim de semana cheio de inovação, os participantes criaram projetos incríveis, aprenderam com mentores experientes e colaboraram com colegas. Foi uma oportunidade única para mostrar talentos e aprimorar habilidades.",
-      image: hackfoolsImage0,
-    },
-  ]
+  const [events, setEvents] = useState<Event[]>([])
+
+  useEffect(() => {
+    const getEvents = async () => {
+      const result = await API.getEvents();
+      setEvents(result);
+    }
+    getEvents();
+  }, [])
 
   const [h, setH] = useState(window.innerHeight);
   window.addEventListener("resize", () => {
@@ -78,12 +105,12 @@ function Events() {
         <Parabola a={0.0006} b={-0.04} c={200} startX={0} endX={2000} step={1} h={h} />
       </div>
       <div className='block md:hidden'>
-        <Parabola a={0.0007} b={-0.2} c={80} startX={0} endX={2000} step={1} h={h} />
+        <Parabola a={0.0008} b={-0.2} c={90} startX={0} endX={2000} step={1} h={h} />
       </div>
 
       <div
         className='absolute bg-gradient-to-tr from-white to-primary
-        w-full py-48 md:pt-32 md:pb-24 text-center text-4xl md:text-6xl
+        w-full py-24 md:pt-32 md:pb-24 text-center text-4xl md:text-6xl
         font-monteserrat font-bold text-background z-10'>EVENTOS</div>
 
       <div
@@ -96,18 +123,21 @@ function Events() {
 
       <div
         className='flex flex-col items-start'>
-        {eventArray.map((event, index) => (
+        {eventsExample.map((event, index) => (
           <EventCard
-            date={event.date}
-            title={event.title}
-            content={event.content}
-            image={event.image}
+            date={new Date(event.date)}
+            title={event.name}
+            content={event.description}
+            image={event.photo}
             offset={index * h / 2 + h / 2}
             h={h}
-            key={index}
+            key={event.id_event}
             setBg={setBgImage} />
         ))}
       </div>
+
+      <div className='h-40'/>
+
       <Footer />
     </div>
   )
