@@ -14,7 +14,7 @@ const ContributeSection: React.FC = () => {
           <br />Durante o curso, você terá a oportunidade de explorar seu interesse em se tornar um desenvolvedor, criando um projeto próprio.
           <br />Além de adquirir novos conhecimentos, essa experiência permitirá que você se torne um codelaber e faça parte da nossa comunidade de aprendizado e inovação!
         </p>
-        <p className={`text-lg text-center md:text-2xl p-8 md:p-6 font-semibold font-poppins text-textLightGrey`}>
+        <p className={`text-lg text-center md:text-2xl p-8 md:px-32 font-semibold font-poppins text-textLightGrey`}>
           Venha descobrir suas habilidades e se juntar a nós nessa jornada tecnológica!
         </p>
       </div>

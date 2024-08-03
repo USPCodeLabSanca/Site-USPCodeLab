@@ -14,7 +14,7 @@ interface FrenteCardProps {
 const FrenteCard: React.FC<FrenteCardProps> = ({ index, title, subtitle, text, fontStyle, logoImg, image }) => {
   if (index == undefined) index = 0
   return (
-    <div className="p-6 relative h-3/4 my-32 md:my-64 grid md:grid-cols-2 md:grid-rows-1 grid-rows-2">
+    <div className="p-6 relative h-3/4 my-16 md:my-64 grid md:grid-cols-2 md:grid-rows-1 grid-rows-2">
       <FrenteShape type={index} orientation={index % 2 == 0 ? 'left' : 'right'} image={image} />
       <motion.div
         initial={index % 2 != 0 ?

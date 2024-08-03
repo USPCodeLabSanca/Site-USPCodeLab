@@ -17,3 +17,4 @@ export { default as EventCard } from './EventCard/EventCard';
 export { default as Parabola } from './Parabola/Parabola'
 export { default as EventDescription } from './EventDescription/EventDescription';
 export { default as ContributeSection } from './sections/ContributeSection/ContributeSection';
+export { default as ScrollToTop } from './ScrollToTop/ScrollToTop.tsx';

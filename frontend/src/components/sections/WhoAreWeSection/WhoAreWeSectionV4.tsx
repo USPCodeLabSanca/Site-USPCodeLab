@@ -34,17 +34,17 @@ const WhoAreWeSection: React.FC = () => {
   return (
     <>
       <section className='relative' id="whoAreWe">
-        <div className='text-center text-4xl md:text-6xl font-monteserrat font-medium text-primary mb-20 md:mb-40'>Sobre nós</div>
-        <motion.div className='sticky top-0 w-full md:hidden'>
+        <div className='text-center text-4xl md:text-6xl font-monteserrat font-medium text-primary mb-20 md:mb-60 2xl:mb-80'>Sobre nós</div>
+        <motion.div className='sticky top-0 w-full md:hidden z-10'>
           <ImageScroll images={imageArray}></ImageScroll>
         </motion.div>
-        <div className='grid md:grid-cols-2 grid-cols-1'>
+        <div className='grid md:grid-cols-2 grid-cols-1 z-0'>
           <div className='w-full hidden md:block'>
             <motion.div className='sticky top-0 w-full md:top-1/4'>
               <ImageScroll images={imageArray}></ImageScroll>
             </motion.div>
           </div>
-          <div className='flex flex-col gap-64 items-center mt-24 mb-24'>
+          <div className='flex flex-col gap-64 items-center mt-36 md:my-24'>
             {textArray.map((text, index) => {
               return (<TextAnimation key={index} text={text} />)
             })}
