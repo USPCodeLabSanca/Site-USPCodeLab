@@ -1,25 +1,25 @@
 import { Routes, Route } from "react-router-dom";
-import {Homepage, Projects, Events} from "src/pages";
+import { Homepage, Projects, Events } from "src/pages";
 
+export default function PageRoutes() {
+  return (
+    <>
+      <Routes>
+        <Route path="/"
+          element={<Homepage />} // inserir paginas aqui
+        />
 
-export default function PageRoutes(){
-    return(
-        <>
-        <Routes>
-            <Route path="/" 
-            element={ <Homepage/>} // inserir paginas aqui
-            />
+        <Route path="/projects"
+          element={<Projects />}
+        />
 
-            <Route path="/projects"
-            element={<Projects/>}
-            />
+        <Route path="/events"
+          element={<Events />} />
 
-            <Route path="/events"
-            element={<Events/>}/>
+        <Route path="/helloworld"
+          element={"Hello World"} ></Route>
 
-            <Route path="/helloworld" 
-            element={"Hello World"} ></Route>
-        </Routes>
-        </>
-    )
+      </Routes>
+    </>
+  )
 }

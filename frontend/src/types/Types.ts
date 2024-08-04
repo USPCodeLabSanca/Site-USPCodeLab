@@ -6,7 +6,7 @@ export type Event = {
   name: string,
   description: string,
   photo: string,
-  id_event: number,
+  id_event: string,
 }
 
 export type Group = {

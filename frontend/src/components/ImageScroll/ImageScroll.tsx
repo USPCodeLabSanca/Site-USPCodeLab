@@ -79,7 +79,7 @@ const ImageScroll: React.FC<ImageScrollProps> = (props: ImageScrollProps) => {
 
   return (
     <>
-      <div className='w-full h-72'>
+      <div className='w-full h-72 overflow-y-hidden md:overflow-y-visible'>
         <motion.div
           className={`flex transition-transform duration-1000 ease-in-out`}
           style={{ transform: `translateY(${-1 * itensTranlate[0] * 100}%)` }}

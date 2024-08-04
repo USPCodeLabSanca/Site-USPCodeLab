@@ -48,7 +48,7 @@ const frenteobject = [
 const FrenteSection: React.FC = () => {
     return (
         <div>
-            <div className='mt-[40vh] text-center text-4xl md:text-6xl font-monteserrat font-medium text-primary'>Frentes</div>
+            <div className='mt-[10vh] text-center text-4xl md:text-6xl font-monteserrat font-medium text-primary'>Frentes</div>
             <div className='mt-5 text-center text-base md:text-lg font-monteserrat font-medium text-white'>Conheça um pouco mais sobre o que nós desenvolvemos ;)</div>
             {frenteobject.map((frente, key) => {
                 return (

@@ -37,8 +37,7 @@ function EventCard(cardProps: EventCardProps) {
       className={"relative md:ml-20 w-full"}
       style={{
         height: cardProps.h / 2,
-      }}
-    >
+      }}>
       <motion.div
         style={{
           x,
@@ -53,11 +52,6 @@ function EventCard(cardProps: EventCardProps) {
           <div className='md:w-3/4'>
             <EventDescription title={cardProps.title} content={cardProps.content} />
           </div>
-          {/* <div className='flex flex-col md:flex-row gap-2'>
-            <div className="w-64 hidden md:block">
-              <img src={cardProps.image} key={cardProps.image}></img>
-            </div>
-          </div> */}
         </motion.div>
       </motion.div>
     </section >
