@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 import { GithubIcon, logoSimplifiedWhiteColoured } from 'src/assets';
 import { Button, TextHighlight } from 'src/components'
-import { useScroll, useTransform, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const HomeSection: React.FC = () => {
   // const targetRef = useRef<HTMLDivElement>(null);
@@ -24,10 +24,11 @@ const HomeSection: React.FC = () => {
       >
         <div className='flex flex-row items-center'>
           <motion.div
+            initial={{ x: 0 }}
             animate={{ x: 0 }}
             transition={{ duration: 2 }}
             className='w-full px-8 md:h-screen flex flex-col gap-6 justify-center md:items-start items-center'>
-            
+
             <div className='flex flex-col items-start lg:flex-row lg:items-end font-monteserrat mb-10'>
               <div className='text-6xl md:text-9xl font-medium text-white'>Code</div>
               <div className='flex items-end md:flex-col md:items-start lg:flex-row lg:items-end'>
@@ -63,6 +64,9 @@ const HomeSection: React.FC = () => {
           </motion.div>
         </div>
         <motion.div
+          initial={{ x: 0 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 2 }}
           className='mb-3 md:mb-0'>
           <img className='h-32 md:h-auto md:max-h-96' src={logoSimplifiedWhiteColoured}></img>
         </motion.div>

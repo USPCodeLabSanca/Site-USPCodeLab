@@ -50,6 +50,16 @@ export interface EventCardProps {
     setBg: (image: string) => void,
 }
 
+// props para o componente de evento
+export interface EventCardMobileProps {
+    id: string;
+    name: string;
+    description: string;
+    date: string;
+    photo: string;
+    [key: string]: any; // This allows for additional props
+}
+
 // Interface que define o formato de um objeto que representa uma frente e a direcao dela para o componente pai
 export interface SelectedFrenteProps {
     frente: string,
