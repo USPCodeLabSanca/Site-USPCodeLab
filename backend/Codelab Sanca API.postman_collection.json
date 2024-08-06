@@ -33,7 +33,13 @@
 					"name": "Add Technology",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer secre",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"name\": \"React\",\n    \"logo\": \"http\"\n}",
@@ -351,7 +357,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"React\",\n    \"description\": \"Pepa Pig\",\n    \"photo\": \"http\",\n    \"date\": \"2024-06-21T00:00:00Z\"\n}",
+							"raw": "{\n    \"name\": \"React\",\n    \"description\": \"Pepa Pig\",\n    \"github_link\": \"abate\",\n    \"id_group\": 2,\n    \"photo\": \"http\",\n    \"date\": \"2024-06-21T00:00:00Z\",\n    \"technologies\": [2]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -359,7 +365,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/event",
+							"raw": "http://localhost:3000/api/project",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -367,7 +373,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"event"
+								"project"
 							]
 						}
 					},
@@ -388,6 +394,27 @@
 							}
 						},
 						"url": {
+							"raw": "http://localhost:3000/api/project/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"project",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
 							"raw": "http://localhost:3000/api/project/1",
 							"protocol": "http",
 							"host": [
@@ -402,29 +429,37 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "Delete Project",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/event/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"event",
-								"1"
-							]
-						}
-					},
-					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local-url",
+			"value": "http://localhost:3000",
+			"type": "string"
 		}
 	]
 }

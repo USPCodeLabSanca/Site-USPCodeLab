@@ -4,7 +4,7 @@ import prisma from '../../db'
 const updateGroup = async (req: Request, res: Response) => {
   try {
     const id = Number(req.params.id)
-    const { name, description, logo } = req.body
+    const { name, description, logo, subtitle, image } = req.body
 
     const group = await prisma.group.findUnique({ where: { id_group: id } })
 
@@ -12,7 +12,7 @@ const updateGroup = async (req: Request, res: Response) => {
 
     const newGroup = await prisma.group.update({
       where: { id_group: id },
-      data: { name, description, logo },
+      data: { name, description, logo, subtitle, image },
     })
 
     return res.send(newGroup)

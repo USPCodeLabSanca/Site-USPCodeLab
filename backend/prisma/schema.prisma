@@ -32,8 +32,10 @@ model event {
 model group {
   id_group    Int       @id @default(autoincrement())
   name        String
+  subtitle    String
   description String
   logo        String
+  image       String
   project     project[]
 }
 
