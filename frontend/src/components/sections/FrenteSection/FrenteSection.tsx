@@ -1,4 +1,3 @@
-import { devlearnImage0 } from "src/assets";
 import FrenteCard from "src/components/FrenteCard/FrenteCard";
 import { useData } from "src/contexts/DataContext";
 
