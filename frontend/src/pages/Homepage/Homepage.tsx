@@ -1,24 +1,30 @@
-
-import { Header, Footer, HomeSection, WhoAreWeSectionV4, FrenteSection, ContributeSection } from 'src/components'
+import {
+  Header,
+  Footer,
+  HomeSection,
+  WhoAreWeSectionV4,
+  FrenteSection,
+  ContributeSection,
+} from "src/components";
 
 function Homepage() {
   return (
     <>
-      <div className='bg-background'>
+      <div className="bg-background">
         <Header />
         <HomeSection />
 
         <WhoAreWeSectionV4 />
-        <div className='overflow-hidden'>
+        <div className="overflow-hidden">
           <FrenteSection />
         </div>
 
-        <ContributeSection/>
+        <ContributeSection />
 
         <Footer />
       </div>
     </>
-  )
+  );
 }
 
-export default Homepage
+export default Homepage;

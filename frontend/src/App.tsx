@@ -1,7 +1,11 @@
-import Routes from "./routes"
-import { ScrollToTop } from "./components"
+import Routes from "./routes";
+import { ScrollToTop } from "./components";
+import { DataProvider, useData } from "./contexts/DataContext";
 
 function App() {
+  const { loading } = useData();
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div>
@@ -10,7 +14,15 @@ function App() {
         <Routes />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+function AppWithContext() {
+  return (
+    <DataProvider>
+      <App />
+    </DataProvider>
+  );
+}
+
+export default AppWithContext;
