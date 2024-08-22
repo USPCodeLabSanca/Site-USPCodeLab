@@ -24,16 +24,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
-  pgweb:
-    image: sosedoff/pgweb:0.13.1
-    restart: on-failure
-    ports:
-      - 8081:8081
-    environment:
-      - DATABASE_URL=${PGWEB_DATABASE_URL}
-    depends_on:
-      - postgres
-
 volumes:
   postgres_data:
   logs:
