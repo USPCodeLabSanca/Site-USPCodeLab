@@ -12,3 +12,9 @@ run-generate:
 
 prisma-generate:
 	@nvm use 16; npx prisma generate; docker compose down; docker compose build; make start-docker
+
+start-docker-prod:
+	@docker compose -f docker-compose.prod.yml up --build -d
+
+restart-docker-prod:
+	@docker compose -f docker-compose.prod.yml down; docker compose -f docker-compose.prod.yml up --build -d
