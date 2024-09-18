@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useData } from "src/contexts/DataContext";
 
-const allGroup = {
-  id_group: 0,
-  name: "Todos",
-};
+// const allGroup = {
+//   id_group: 0,
+//   name: "Todos",
+// };
 
 function Projects() {
   const { groups, projects } = useData();
@@ -27,8 +27,8 @@ function Projects() {
       return {
         title: project.name,
         content: project.description,
-        icons: [],
-        iconLinks: [],
+        icons: project.technologies.map((tech) => tech.name),
+        iconLinks: project.technologies.map((tech) => tech.logo),
         id_group: project.id_group,
         github_link: project.github_link,
       };
@@ -44,7 +44,7 @@ function Projects() {
     [...groups].forEach((frente) => {
       const array: ProjectCardProps[] = projectsList.filter((projeto) => {
         if (frente.id_group !== 0) return projeto.id_group === frente.id_group;
-        return true;
+          return true;
       });
 
       projectsContainer.push(array);
