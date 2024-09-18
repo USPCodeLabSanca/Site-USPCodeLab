@@ -25,8 +25,12 @@ export function DataProvider({ children }: Props) {
   const fetchAll = async () => {
     try {
       const groups = await Handlers.getGroups();
+      groups.sort((a: { id_group: number; }, b: { id_group: number; }) => a.id_group - b.id_group);
+      
       const events = await Handlers.getEvents();
+      
       const projects = await Handlers.getProjects();
+      projects.sort((a: { date: string; }, b: { date: string; }) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
       setGroups(groups);
       setEvents(events);

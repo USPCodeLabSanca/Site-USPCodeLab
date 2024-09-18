@@ -1,4 +1,4 @@
-import { Group, SVGType } from "./Types";
+import { Group } from "./Types";
 
 /* Interface para props com parametros e children 
 uso:
@@ -24,8 +24,8 @@ export interface BaseClassNameProps {
 export interface ProjectCardProps extends BaseClassNameProps {
   title: string;
   content: string;
-  icons?: React.FC[] | SVGType[];
-  iconLinks?: string[];
+  icons: string[];
+  iconLinks: string[];
   github_link?: string;
   id_group?: number;
 }
