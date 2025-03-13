@@ -42,9 +42,9 @@ const Header: React.FC = () => {
         <div className='flex w-full items-center justify-between'>
           <Link to='/'>
             <motion.div className='flex'>
-              <Icon style="w-40 mx-1" Image={CodelabLogo} alt="Icone UspCodeLabSanca" />
-              <Icon style="h-5 hidden md:block w-12 px-1 pt-5" Image={UspLogo} alt="Icone USP" />
-              <Icon style="h-5 hidden md:block w-12 px-1 pt-5" Image={IcmcLogo} alt="Icone ICMC" />
+              <Icon title='UspCodelabSanca Icon' style="w-40 mx-1" Image={CodelabLogo} alt="Icone UspCodeLabSanca" />
+              <Icon title='USP Icon' style="h-5 hidden md:block w-12 px-1 pt-5" Image={UspLogo} alt="Icone USP" />
+              <Icon title='ICMC Icon' style="h-5 hidden md:block w-12 px-1 pt-5" Image={IcmcLogo} alt="Icone ICMC" />
             </motion.div>
           </Link>
           <div className='flex w-40 md:w-52 justify-between'>
