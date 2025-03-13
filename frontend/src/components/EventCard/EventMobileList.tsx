@@ -79,7 +79,7 @@ export default function List({ events }: { events: Event[] }) {
                   className="absolute top-0 right-0 mt-4 mr-4 p-1 w-8 h-8 cursor-pointer bg-gray-100 rounded-full"
                   onClick={() => setSelectedIndex(null)}
                 >
-                  <Icon Image={XIcon} alt="fechar"></Icon>
+                  <Icon Image={XIcon} alt="fechar" title="fechar"></Icon>
                 </motion.button>
               </motion.div>
             </motion.div>

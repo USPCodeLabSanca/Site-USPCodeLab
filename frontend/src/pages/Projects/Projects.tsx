@@ -64,7 +64,7 @@ function Projects() {
     setX(x);
   }, [selectedFrente]);
 
-  const [h, setH] = useState(window.innerHeight);
+  const [_, setH] = useState(window.innerHeight);
   window.addEventListener("resize", () => {
     setH(window.innerHeight);
   });
