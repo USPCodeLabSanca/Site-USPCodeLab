@@ -1,10 +1,11 @@
 name: codelab-site
+
 services:
   backend:
     build: .
-    restart: on-failure
+    restart: unless-stopped
     ports:
-      - 3000:3000
+      - "127.0.0.1:3000:3000"
     volumes:
       - .:/app
       - /app/node_modules
@@ -14,13 +15,11 @@ services:
 
   postgres:
     image: postgres:13-alpine
-    restart: on-failure
+    restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
-    ports:
-      - 5432:5432
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
